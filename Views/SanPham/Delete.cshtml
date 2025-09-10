@@ -1,0 +1,20 @@
+﻿@model DoAnWeb.Models.Sanpham
+
+@{
+    ViewData["Title"] = "Xóa sản phẩm";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Bạn có chắc chắn muốn xóa sản phẩm này?</h3>
+<div>
+    <h4>@Model.Tensp</h4>
+    <p>Giá: @Model.Gia..ToString("N0") VND</p>
+    <p>Số lượng: @Model.Soluong</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Masp" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

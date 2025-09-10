@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DoAnWeb.Models.Sanpham>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">➕ Thêm sản phẩm</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Giảm giá</th>
+            <th>Số lượng</th>
+            <th>Hình ảnh</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sp in Model)
+        {
+            <tr>
+                <td>@sp.Tensp</td>
+                <td>@sp.Gia VND</td>
+                <td>@(sp.Giamgia?.ToString("N0") ?? "0") VND</td>
+                <td>@sp.Soluong</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(sp.Hinhanh))
+                    {
+                        <img src="~/images/@sp.Hinhanh" alt="Ảnh sản phẩm" width="150" />
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@sp.Masp" class="btn btn-sm btn-warning">✏️ Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@sp.Masp" class="btn btn-sm btn-info">🔍 Xem</a> |
+                    <a asp-action="Delete" asp-route-id="@sp.Masp" class="btn btn-sm btn-danger">🗑 Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
