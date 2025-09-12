@@ -1,5 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,17 +46,57 @@
                         </form>
                     </div>
 
-                   
+
                     <div class="col-3 d-flex justify-content-end align-items-center gap-3">
                         <!-- Giỏ hàng -->
-                        <a asp-area="" asp-controller="GioHang" asp-action="Index" class="btn btn-outline-success">
+                        <a asp-area="" asp-controller="GioHang" asp-action="Index" class="btn btn-outline-success position-relative">
                             🛒 Giỏ hàng
+                            @if (HttpContextAccessor.HttpContext.Session.GetInt32("MAKH") != null)
+                            {
+                                var maKH = HttpContextAccessor.HttpContext.Session.GetInt32("MAKH");
+                                // Giả sử bạn lưu DbContext trong ViewBag hoặc lấy qua service
+                                var db = HttpContextAccessor.HttpContext.RequestServices.GetService<DoAnWeb.Models.QLDTContext>();
+                                var count = db.Giohangs.Where(g => g.Makh == maKH).Sum(g => g.Soluong);
+
+                                if (count > 0)
+                                {
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        @count
+                                    </span>
+                                }
+                            }
                         </a>
-                        <!-- Đăng nhập -->
-                        <a asp-area="" asp-controller="Account" asp-action="Login" class="btn btn-primary">
-                            Đăng nhập
-                        </a>
+
+
+
+                        @if (HttpContextAccessor.HttpContext.Session.GetInt32("MAKH") != null)
+                        {
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @HttpContextAccessor.HttpContext.Session.GetString("TENKH")
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                                    <li>
+                                        <a class="dropdown-item" asp-area="" asp-controller="NguoiDung" asp-action="Profile">Hồ sơ của tôi</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-area="" asp-controller="NguoiDung" asp-action="Orders">Đơn hàng của tôi</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-area="" asp-controller="NguoiDung" asp-action="Logout">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        }
+                        else
+                        {
+                            <a asp-area="" asp-controller="NguoiDung" asp-action="DangNhap" class="btn btn-primary">
+                                Đăng nhập
+                            </a>
+                        }
                     </div>
+
                 </div>
 
 

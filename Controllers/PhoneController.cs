@@ -66,6 +66,58 @@ namespace DoAnWeb.Controllers
             ViewData["PageType"] = "details"; // không hiển thị banner
             return View(product);
         }
+
+
+        // POST: /Phone/AddToCart/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddToCart(int id, int quantity = 1)
+        {
+            // Lấy MAKH từ session
+            int? maKH = HttpContext.Session.GetInt32("MAKH");
+            if (maKH == null)
+            {
+                TempData["ErrorMessage"] = "Vui lòng đăng nhập trước khi thêm vào giỏ hàng.";
+                return RedirectToAction("DangNhap", "NguoiDung");
+            }
+
+            // Kiểm tra sản phẩm tồn tại
+            var product = _context.Sanphams.FirstOrDefault(p => p.Masp == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            // Kiểm tra sản phẩm đã có trong giỏ chưa
+            var cartItem = _context.Giohangs.FirstOrDefault(g => g.Makh == maKH.Value && g.Masp == id);
+            if (cartItem != null)
+            {
+                // Nếu đã có, tăng số lượng
+                cartItem.Soluong += quantity;
+            }
+            else
+            {
+                // Nếu chưa có, tạo mới
+                cartItem = new Giohang
+                {
+                    Makh = maKH.Value,
+                    Masp = id,
+                    Soluong = quantity
+                };
+                _context.Giohangs.Add(cartItem);
+            }
+
+            _context.SaveChanges();
+
+            // 👉 Cập nhật lại tổng số lượng giỏ hàng vào session
+            var cartCount = _context.Giohangs
+                                    .Where(g => g.Makh == maKH.Value)
+                                    .Sum(g => g.Soluong);
+            HttpContext.Session.SetInt32("CART_COUNT", cartCount);
+
+            TempData["SuccessMessage"] = "Đã thêm sản phẩm vào giỏ hàng!";
+            return RedirectToAction("SanPham"); // hoặc RedirectToAction("Details", new { id })
+        }
     }
 }
 

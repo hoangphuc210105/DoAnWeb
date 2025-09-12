@@ -3,17 +3,27 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ?? ??ng ký DbContext tr??c khi Build()
+// 1️⃣ Đăng ký DbContext
 builder.Services.AddDbContext<QLDTContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("QLDTConnection"))
 );
 
-// Add services to the container.
+// 2️⃣ Đăng ký session + IHttpContextAccessor
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddHttpContextAccessor();
+
+// 3️⃣ Add services MVC
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -25,12 +35,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// 4️⃣ Bật Session trước Authorization
+app.UseSession();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Phone}/{action=Index}/{id?}");
 
-app.Run(); 
-
-
+app.Run();

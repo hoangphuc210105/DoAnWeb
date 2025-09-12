@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Thanh toán";
+    Layout = "_Layout";
+}
+
+<h2 class="mb-4">@ViewData["Title"]</h2>
+
+<form asp-action="Checkout" method="post">
+    <div class="mb-3">
+        <label class="form-label">Tên người nhận</label>
+        <input type="text" name="tenNguoiNhan" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Địa chỉ nhận</label>
+        <input type="text" name="diaChiNhan" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Điện thoại</label>
+        <input type="text" name="dienThoaiNhan" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Xác nhận đặt hàng</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại giỏ hàng</a>
+</form>

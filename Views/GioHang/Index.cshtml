@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DoAnWeb.Models.Giohang>
+
+@{
+    ViewData["Title"] = "Giỏ hàng của bạn";
+    Layout = "_Layout";
+}
+
+<h2 class="mb-4">@ViewData["Title"]</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Giỏ hàng của bạn đang trống.
+        <a asp-controller="Phone" asp-action="Index" class="alert-link">Tiếp tục mua sắm</a>.
+    </div>
+}
+else
+{
+    <table class="table table-bordered align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Hình ảnh</th>
+                <th>Sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width:120px">
+                        <img src="~/images/@item.MaspNavigation.Hinhanh" alt="@item.MaspNavigation.Tensp" class="img-thumbnail" style="width:100px" />
+                    </td>
+                    <td>@item.MaspNavigation.Tensp</td>
+                    <td>@String.Format("{0:N0} đ", item.MaspNavigation.Gia)</td>
+                    <td>
+                        <form asp-action="UpdateQuantity" method="post" class="d-flex">
+                            <input type="hidden" name="id" value="@item.Masp" />
+                            <input type="number" name="quantity" value="@item.Soluong" min="1" class="form-control form-control-sm me-2" style="width:80px" />
+                            <button type="submit" class="btn btn-sm btn-primary">Cập nhật</button>
+                        </form>
+                    </td>
+                    <td>@String.Format("{0:N0} đ", (item.MaspNavigation.Gia ?? 0) * item.Soluong)</td>
+                    <td>
+                        <a asp-action="Remove" asp-route-id="@item.Masp" class="btn btn-sm btn-danger" onclick="return confirm('Xóa sản phẩm này?')">
+                            Xóa
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-end">
+        <h4>
+            Tổng cộng:
+            <span class="text-danger">
+                @String.Format("{0:N0} đ", Model.Sum(i => (i.MaspNavigation.Gia ?? 0) * i.Soluong))
+            </span>
+        </h4>
+
+        <a asp-action="Checkout" class="btn btn-success btn-lg mt-3">Tiến hành thanh toán</a>
+    </div>
+}

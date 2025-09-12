@@ -17,6 +17,13 @@
         <p><strong>Mô tả:</strong> @Model.Mota</p>
         <p><strong>Ngày sản xuất:</strong> @Model.Ngaysanxuat?.ToString("dd/MM/yyyy")</p>
 
-        <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+        <!-- Form thêm vào giỏ hàng -->
+        <form asp-controller="Phone" asp-action="AddToCart" method="post">
+            <input type="hidden" name="id" value="@Model.Masp" />
+            <div class="input-group mb-3" style="width: 150px;"> 
+                <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
+            </div>
+        </form>
+        <a asp-action="Index" class="btn btn-secondary mt-2">Quay lại danh sách</a>
     </div>
 </div>

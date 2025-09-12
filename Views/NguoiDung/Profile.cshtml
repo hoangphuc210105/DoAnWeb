@@ -1,0 +1,38 @@
+﻿@model DoAnWeb.Models.Khachhang
+
+@{
+    ViewData["Title"] = "Thông tin cá nhân";
+    ViewData["PageType"] = "auth";
+}
+
+<div class="container mt-5" style="max-width: 600px;">
+    <h2 class="mb-4 text-center">@ViewData["Title"]</h2>
+
+    <div class="card p-4">
+        <div class="mb-3">
+            <strong>Họ và tên:</strong> @Model.Tenkh
+        </div>
+        <div class="mb-3">
+            <strong>Ngày sinh:</strong> @Model.Ngaysinh.ToString("dd/MM/yyyy")
+        </div>
+        <div class="mb-3">
+            <strong>Giới tính:</strong> @(Model.Gioitinh.HasValue ? (Model.Gioitinh.Value ? "Nam" : "Nữ") : "Chưa chọn")
+        </div>
+        <div class="mb-3">
+            <strong>Địa chỉ:</strong> @Model.Diachi
+        </div>
+        <div class="mb-3">
+            <strong>Tên đăng nhập:</strong> @Model.Tendn
+        </div>
+        <div class="mb-3">
+            <strong>Email:</strong> @Model.Email
+        </div>
+        <div class="mb-3">
+            <strong>Số điện thoại:</strong> @Model.Sdt
+        </div>
+        <div class="text-center mt-3">
+            <a asp-controller="Phone" asp-action="Index" class="btn btn-secondary me-2">Quay lại</a>
+            <a asp-controller="NguoiDung" asp-action="EditProfile" class="btn btn-primary">Chỉnh sửa</a>
+        </div>
+    </div>
+</div>

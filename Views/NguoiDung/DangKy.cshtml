@@ -1,0 +1,86 @@
+﻿@model DoAnWeb.Models.Khachhang
+
+@{
+    ViewData["Title"] = "Đăng ký tài khoản";
+    ViewData["PageType"] = "auth"; // để layout biết không hiển thị banner home
+}
+
+<div class="container mt-5" style="max-width: 600px;">
+    <h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+    @* Thông báo đăng ký thành công *@
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form asp-action="DangKy" method="post">
+        <div class="mb-3">
+            <label asp-for="Tenkh" class="form-label">Họ và tên</label>
+            <input asp-for="Tenkh" class="form-control" />
+            <span asp-validation-for="Tenkh" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Ngaysinh" class="form-label">Ngày sinh</label>
+            <input asp-for="Ngaysinh" type="date" class="form-control" />
+            <span asp-validation-for="Ngaysinh" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Giới tính</label><br />
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" asp-for="Gioitinh" value="true" id="nam" />
+                <label class="form-check-label" for="nam">Nam</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" asp-for="Gioitinh" value="false" id="nu" />
+                <label class="form-check-label" for="nu">Nữ</label>
+            </div>
+            <span asp-validation-for="Gioitinh" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Diachi" class="form-label">Địa chỉ</label>
+            <input asp-for="Diachi" class="form-control" />
+            <span asp-validation-for="Diachi" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Tendn" class="form-label">Tên đăng nhập</label>
+            <input asp-for="Tendn" class="form-control" />
+            <span asp-validation-for="Tendn" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" type="email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Matkhau" class="form-label">Mật khẩu</label>
+            <input asp-for="Matkhau" type="password" class="form-control" />
+            <span asp-validation-for="Matkhau" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Sdt" class="form-label">Số điện thoại</label>
+            <input asp-for="Sdt" class="form-control" />
+            <span asp-validation-for="Sdt" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <p>
+            Đã có tài khoản?
+            <a asp-controller="NguoiDung" asp-action="DangNhap">Đăng nhập ngay</a>
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
