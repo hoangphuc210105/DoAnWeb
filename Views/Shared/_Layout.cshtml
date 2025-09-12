@@ -6,39 +6,112 @@
     <title>@ViewData["Title"] - DoAnWeb</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/js/site.js" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css//Phone.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css//Footer.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DoAnWeb.styles.css" asp-append-version="true" />
+
+    
 </head>
+<!-- Banner image -->
+
 <body>
+    <div class="banner-top d-none d-md-block" style="background: #000000">
+        <div class="container">
+            <img src="~/images/banner_top.jpg" alt="Banner-top" height="47" width="1325" />
+        </div>
+    </div>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DoAnWeb</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+       
+        <!-- Logo -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-white  sticky-top">
+            <div class="container-fluid d-flex flex-column">
+                <!-- Hàng 1: Logo + Search + Hotline + Giỏ hàng + Đăng nhập -->
+                <div class="row w-100 align-items-center">
+                    <!-- Logo -->
+                    <div class="col-3 d-flex align-items-center">
+                        <a class="navbar-brand" asp-area="" asp-controller="Phone" asp-action="Index">
+                            <img src="~/images/logo.webp" alt="Logo" style="height:50px;" />
+                        </a>
+                    </div>
+
+                    <!-- Search Form (nằm giữa) -->
+                    <div class="col-6 d-flex justify-content-center">
+                        <form class="d-flex w-75" asp-controller="Phone" asp-action="Search" method="get">
+                            <input class="form-control me-2" type="search" name="keyword" placeholder="Bạn cần tìm gì..." value="@ViewData["SearchKeyword"]">
+                            <button class="btn btn-outline-primary" type="submit">Tìm</button>
+                        </form>
+                    </div>
+
+                   
+                    <div class="col-3 d-flex justify-content-end align-items-center gap-3">
+                        <!-- Giỏ hàng -->
+                        <a asp-area="" asp-controller="GioHang" asp-action="Index" class="btn btn-outline-success">
+                            🛒 Giỏ hàng
+                        </a>
+                        <!-- Đăng nhập -->
+                        <a asp-area="" asp-controller="Account" asp-action="Login" class="btn btn-primary">
+                            Đăng nhập
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <!-- Hàng 2: Menu (bên trái, dưới logo) -->
+                <div class="navbar-collapse collapse d-sm-inline-flex mt-2 w-100">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link fw-bold text-danger" asp-area="" asp-controller="Phone" asp-action="Index">APPLE STORE</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SanPham" asp-action="Index">Sản phẩm</a>
+                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Phone" asp-action="SanPham">IPHONE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="#" asp-action="Index">IPAD</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="#" asp-action="Index">PHỤ KIỆN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Home" asp-action="BaoHanh">BẢO HÀNH VÀ HẬU MÃI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-black" asp-area="" asp-controller="Home" asp-action="LienHe">LIÊN HỆ</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - DoAnWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    @{
+        var pageType = ViewData["PageType"] as string ?? "home";
+    }
+    @if (pageType == "home")
+    {
+        <div class="banner-body text-center">
+            <img src="~/images/slider_1.jpg"
+                 alt="Slider"
+                 class="img-fluid d-block "
+                 style="width:1285.6; height:auto;" />
+        </div>
+    }
+    @RenderBody()
+    <footer>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <div class="div-footer">
+            <div class="footer-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="footer-trademark">
+                <p>© AI Apple Foundation - 2024.</p>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

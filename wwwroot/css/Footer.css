@@ -1,0 +1,29 @@
+﻿.div-footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px; /* Tạo khoảng cách giữa các icon */
+    justify-content: center; /* Căn giữa các icon */
+    margin-bottom: 10px;
+}
+
+    .footer-icons a {
+        color: white;
+        font-size: 24px; /* Kích thước icon */
+        transition: color 0.3s;
+    }
+
+        .footer-icons a:hover {
+            color: #ff4081; /* Đổi màu khi hover */
+        }
+
+.footer-trademark {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #aaa; /* Màu xám nhạt cho dòng chữ */
+}

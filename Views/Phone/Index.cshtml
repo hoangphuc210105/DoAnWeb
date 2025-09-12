@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DoAnWeb.Models.Sanpham>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+    Layout = "_Layout";
+}
+
+<h2 class="text-center my-4 fw-bold text-primary">@ViewData["Title"]</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card product-card h-100 shadow-sm">
+                    <img src="~/images/@item.Hinhanh" class="card-img-top product-img" alt="@item.Tensp" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-truncate">@item.Tensp</h5>
+                        <p class="card-text text-danger fw-bold">
+                            @String.Format("{0:N0} đ", item.Gia)
+                        </p>
+                        <a asp-action="Details" asp-route-id="@item.Masp"
+                           class="btn btn-outline-primary btn-sm">
+                            Xem chi tiết
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

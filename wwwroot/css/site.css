@@ -1,18 +1,14 @@
+﻿
 html {
-  font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    overflow-x: hidden; /* thay overflow-y: scroll */
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+
+
+.navbar {
+    margin: 0px 100px; /* trên/dưới 10px, trái/phải 15px */
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
 
-body {
-  margin-bottom: 60px;
-}

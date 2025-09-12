@@ -1,9 +1,9 @@
-using DoAnWeb.Models;
+ï»¿using DoAnWeb.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ?? ??ng ký DbContext tr??c khi Build()
+// ?? ??ng kÃ½ DbContext tr??c khi Build()
 builder.Services.AddDbContext<QLDTContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("QLDTConnection"))
 );
@@ -29,6 +29,8 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Phone}/{action=Index}/{id?}");
 
-app.Run(); // ?? ph?i ??t cu?i cùng
+app.Run(); 
+
+

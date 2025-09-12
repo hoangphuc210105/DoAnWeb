@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "H/4qn3wJPYRcp5jxSCoQDfOcmSfpvQjo5HQdgC4lhGk=",
+  "Hash": "5Ga3VLT7CH9LD1SY3qXZhgWgylUoM0nqPbdZ5EN9Wxg=",
   "Source": "DoAnWeb",
   "BasePath": "_content/DoAnWeb",
   "Mode": "Default",
@@ -51,6 +51,74 @@
       "OriginalItemSpec": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DoAnWeb.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\css\\BaoHanh.css",
+      "SourceId": "DoAnWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
+      "BasePath": "_content/DoAnWeb",
+      "RelativePath": "css/BaoHanh.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\BaoHanh.css"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\css\\Footer.css",
+      "SourceId": "DoAnWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
+      "BasePath": "_content/DoAnWeb",
+      "RelativePath": "css/Footer.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Footer.css"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\css\\LienHe.css",
+      "SourceId": "DoAnWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
+      "BasePath": "_content/DoAnWeb",
+      "RelativePath": "css/LienHe.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\LienHe.css"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\css\\Phone.css",
+      "SourceId": "DoAnWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
+      "BasePath": "_content/DoAnWeb",
+      "RelativePath": "css/Phone.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Phone.css"
+    },
+    {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\css\\site.css",
       "SourceId": "DoAnWeb",
       "SourceType": "Discovered",
@@ -83,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\093bc7f8-cfec-4ef3-bd22-ed45517cdd20.webp",
+      "SourceId": "DoAnWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
+      "BasePath": "_content/DoAnWeb",
+      "RelativePath": "images/093bc7f8-cfec-4ef3-bd22-ed45517cdd20.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\093bc7f8-cfec-4ef3-bd22-ed45517cdd20.webp"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\11 pro max.jpg",
@@ -493,23 +578,6 @@
       "OriginalItemSpec": "wwwroot\\images\\AppleWatch.jpg"
     },
     {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\background.jpg",
-      "SourceId": "DoAnWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
-      "BasePath": "_content/DoAnWeb",
-      "RelativePath": "images/background.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\background.jpg"
-    },
-    {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\banner.jpg",
       "SourceId": "DoAnWeb",
       "SourceType": "Discovered",
@@ -525,6 +593,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\banner.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\banner_top.jpg",
+      "SourceId": "DoAnWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
+      "BasePath": "_content/DoAnWeb",
+      "RelativePath": "images/banner_top.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\banner_top.jpg"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\banner2.jpg",
@@ -986,12 +1071,12 @@
       "OriginalItemSpec": "wwwroot\\images\\iPad Air 6 m2.jpg"
     },
     {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\iphone_air-den.webp",
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\iphone_air-den.jpg",
       "SourceId": "DoAnWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
       "BasePath": "_content/DoAnWeb",
-      "RelativePath": "images/iphone_air-den.webp",
+      "RelativePath": "images/iphone_air-den.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1000,15 +1085,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\iphone_air-den.webp"
+      "OriginalItemSpec": "wwwroot\\images\\iphone_air-den.jpg"
     },
     {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\iphone_air-trang.webp",
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\iphone_air-trang.jpg",
       "SourceId": "DoAnWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
       "BasePath": "_content/DoAnWeb",
-      "RelativePath": "images/iphone_air-trang.webp",
+      "RelativePath": "images/iphone_air-trang.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1017,15 +1102,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\iphone_air-trang.webp"
+      "OriginalItemSpec": "wwwroot\\images\\iphone_air-trang.jpg"
     },
     {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\iphone_air-xanhdatroi.webp",
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\iphone_air-xanhdatroi.jpg",
       "SourceId": "DoAnWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
       "BasePath": "_content/DoAnWeb",
-      "RelativePath": "images/iphone_air-xanhdatroi.webp",
+      "RelativePath": "images/iphone_air-xanhdatroi.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1034,7 +1119,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\iphone_air-xanhdatroi.webp"
+      "OriginalItemSpec": "wwwroot\\images\\iphone_air-xanhdatroi.jpg"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\iphone-14-pro-trang.jpg",
@@ -1326,6 +1411,23 @@
       "OriginalItemSpec": "wwwroot\\images\\iphone-x.webp"
     },
     {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\logo.webp",
+      "SourceId": "DoAnWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
+      "BasePath": "_content/DoAnWeb",
+      "RelativePath": "images/logo.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.webp"
+    },
+    {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\Macbook M1.jpg",
       "SourceId": "DoAnWeb",
       "SourceType": "Discovered",
@@ -1479,12 +1581,12 @@
       "OriginalItemSpec": "wwwroot\\images\\sanpham.jpg"
     },
     {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\Screenshot 2025-09-10 201806.png",
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\slider_1.jpg",
       "SourceId": "DoAnWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
       "BasePath": "_content/DoAnWeb",
-      "RelativePath": "images/Screenshot 2025-09-10 201806.png",
+      "RelativePath": "images/slider_1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1493,7 +1595,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Screenshot 2025-09-10 201806.png"
+      "OriginalItemSpec": "wwwroot\\images\\slider_1.jpg"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\Tai nghe apple.jpg",

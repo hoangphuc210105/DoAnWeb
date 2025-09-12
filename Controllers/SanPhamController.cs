@@ -17,6 +17,7 @@ namespace DoAnWeb.Controllers
         // GET: SanPham
         public async Task<IActionResult> Index()
         {
+            ViewData["PageType"] = "sanpham"; // Trang sản phẩm
             var sanPham = await _context.Sanphams
                                         .Include(s => s.MadongspNavigation)
                                         .ToListAsync();

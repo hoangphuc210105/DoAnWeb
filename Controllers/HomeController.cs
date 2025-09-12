@@ -13,13 +13,20 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult GioiThieu()
     {
-		return View();
+        return View();
     }
-
-    public IActionResult Privacy()
+    public IActionResult LienHe()
     {
+        ViewData["Title"] = "Liên hệ";
+        ViewData["PageType"] = "lienhe"; // để Layout phân biệt có/không banner
+        return View();
+    }
+    public IActionResult BaoHanh()
+    {
+        ViewData["Title"] = "Bảo hành";
+        ViewData["PageType"] = "baohanh"; // để Layout phân biệt có/không banner
         return View();
     }
 
