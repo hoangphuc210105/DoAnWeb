@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\phonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:controllers\\phonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\nguoidungcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,24 +31,40 @@
       "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\donhang\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\phone\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\phone\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\giohang\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\giohang\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\giohang\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\giohang\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\viewmodels\\orderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\viewmodels\\orderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\viewmodels\\orderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\viewmodels\\orderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\nguoidung\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\nguoidung\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\nguoidung\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\nguoidung\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\nguoidung\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\nguoidung\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\phone\\phukien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\phone\\phukien.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\phone\\sanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\phone\\sanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\nguoidung\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -43,44 +75,60 @@
       "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\nguoidung\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\nguoidung\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\nguoidung\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\nguoidung\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\nguoidung\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\giohang\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\giohang\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\giohang\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\phonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:controllers\\phonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\qldtcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\qldtcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:controllers\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\phone\\ipad.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\phone\\ipad.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\phone\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\phone\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\dongsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\dongsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\trangthaidonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\trangthaidonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\loaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\loaisp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\phone\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\phone\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\viewmodels\\orderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\viewmodels\\orderdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\viewmodels\\orderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\viewmodels\\orderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\ctdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -91,24 +139,8 @@
       "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\giohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\qldtcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\qldtcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\phone\\sanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\phone\\sanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\phone\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|solutionrelative:views\\phone\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00E501AC-95CD-4F14-85FC-2EBC0B264DED}|DoAnWeb.csproj|c:\\users\\lenovo\\desktop\\doanweb\\views\\home\\lienhe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -146,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\DonHang\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\DonHang\\Details.cshtml",
@@ -154,116 +186,125 @@
               "RelativeToolTip": "Views\\DonHang\\Details.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T13:13:45.616Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderDetailsViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\ViewModels\\OrderDetailsViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ViewModels\\OrderDetailsViewModel.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\ViewModels\\OrderDetailsViewModel.cs",
-              "RelativeToolTip": "Models\\ViewModels\\OrderDetailsViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T13:01:46.685Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrderListViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\ViewModels\\OrderListViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ViewModels\\OrderListViewModel.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\ViewModels\\OrderListViewModel.cs",
-              "RelativeToolTip": "Models\\ViewModels\\OrderListViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T13:04:25.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Donhang.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Donhang.cs",
-              "RelativeDocumentMoniker": "Models\\Donhang.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Donhang.cs",
-              "RelativeToolTip": "Models\\Donhang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T11:31:08.733Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Phone\\Details.cshtml",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\Details.cshtml",
-              "RelativeToolTip": "Views\\Phone\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-11T15:09:06.116Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DonHangController.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\DonHangController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DonHangController.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\DonHangController.cs",
-              "RelativeToolTip": "Controllers\\DonHangController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA+wCIAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T12:59:41.477Z",
+              "WhenOpened": "2025-09-12T13:13:45.616Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "NguoiDungController.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\NguoiDungController.cs",
               "RelativeDocumentMoniker": "Controllers\\NguoiDungController.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\NguoiDungController.cs",
               "RelativeToolTip": "Controllers\\NguoiDungController.cs",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAcwLAAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAALsAAAAAAAAAAAAwwM4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T10:46:30.615Z"
+              "WhenOpened": "2025-09-12T10:46:30.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PhoneController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\PhoneController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PhoneController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\PhoneController.cs",
+              "RelativeToolTip": "Controllers\\PhoneController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAswDwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T07:26:31.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GioHangController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\GioHangController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GioHangController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\GioHangController.cs",
+              "RelativeToolTip": "Controllers\\GioHangController.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAADwv64AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T12:21:10.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-16T05:52:15.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T07:23:27.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Donhang.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Donhang.cs",
+              "RelativeDocumentMoniker": "Models\\Donhang.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Donhang.cs",
+              "RelativeToolTip": "Models\\Donhang.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T11:31:08.733Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Orders.cshtml",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\Orders.cshtml",
-              "RelativeDocumentMoniker": "Views\\NguoiDung\\Orders.cshtml",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\Orders.cshtml",
-              "RelativeToolTip": "Views\\NguoiDung\\Orders.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "Views\\GioHang\\Checkout.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\Checkout.cshtml",
+              "RelativeToolTip": "Views\\GioHang\\Checkout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T11:33:36.945Z"
+              "WhenOpened": "2025-09-12T12:42:45.873Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "DangKy.cshtml",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\DangKy.cshtml",
-              "RelativeDocumentMoniker": "Views\\NguoiDung\\DangKy.cshtml",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\DangKy.cshtml",
-              "RelativeToolTip": "Views\\NguoiDung\\DangKy.cshtml",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAtwFYAAAAAAAAAAAAAAA==",
+              "Title": "OrderSuccess.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\OrderSuccess.cshtml",
+              "RelativeDocumentMoniker": "Views\\GioHang\\OrderSuccess.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\OrderSuccess.cshtml",
+              "RelativeToolTip": "Views\\GioHang\\OrderSuccess.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T11:01:44.071Z"
+              "WhenOpened": "2025-09-27T02:23:26.243Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "DangNhap.cshtml",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\DangNhap.cshtml",
-              "RelativeDocumentMoniker": "Views\\NguoiDung\\DangNhap.cshtml",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\DangNhap.cshtml",
-              "RelativeToolTip": "Views\\NguoiDung\\DangNhap.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA8AAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\GioHang\\Index.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\Index.cshtml",
+              "RelativeToolTip": "Views\\GioHang\\Index.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAkwEEAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T11:00:57.197Z"
+              "WhenOpened": "2025-09-12T12:26:03.11Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -275,11 +316,25 @@
               "RelativeToolTip": "Views\\NguoiDung\\EditProfile.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAowDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T11:22:59.565Z"
+              "WhenOpened": "2025-09-12T11:22:59.565Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\Orders.cshtml",
+              "RelativeDocumentMoniker": "Views\\NguoiDung\\Orders.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\Orders.cshtml",
+              "RelativeToolTip": "Views\\NguoiDung\\Orders.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T03:58:43.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Profile.cshtml",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\Profile.cshtml",
               "RelativeDocumentMoniker": "Views\\NguoiDung\\Profile.cshtml",
@@ -287,167 +342,183 @@
               "RelativeToolTip": "Views\\NguoiDung\\Profile.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T11:15:45.78Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\GioHang\\Index.cshtml",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\Index.cshtml",
-              "RelativeToolTip": "Views\\GioHang\\Index.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAkwEEAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T12:26:03.11Z"
+              "WhenOpened": "2025-09-12T11:15:45.78Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Checkout.cshtml",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\Checkout.cshtml",
-              "RelativeDocumentMoniker": "Views\\GioHang\\Checkout.cshtml",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\GioHang\\Checkout.cshtml",
-              "RelativeToolTip": "Views\\GioHang\\Checkout.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Title": "PhuKien.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\PhuKien.cshtml",
+              "RelativeDocumentMoniker": "Views\\Phone\\PhuKien.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\PhuKien.cshtml",
+              "RelativeToolTip": "Views\\Phone\\PhuKien.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T12:42:45.873Z"
+              "WhenOpened": "2025-09-14T14:53:15.359Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "PhoneController.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\PhoneController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PhoneController.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\PhoneController.cs",
-              "RelativeToolTip": "Controllers\\PhoneController.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAmwHgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T07:26:31.564Z"
+              "Title": "SanPham.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\SanPham.cshtml",
+              "RelativeDocumentMoniker": "Views\\Phone\\SanPham.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\SanPham.cshtml",
+              "RelativeToolTip": "Views\\Phone\\SanPham.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T07:39:00.842Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
+              "Title": "DonHangController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\DonHangController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DonHangController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\DonHangController.cs",
+              "RelativeToolTip": "Controllers\\DonHangController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T12:59:41.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DangNhap.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\DangNhap.cshtml",
+              "RelativeDocumentMoniker": "Views\\NguoiDung\\DangNhap.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\DangNhap.cshtml",
+              "RelativeToolTip": "Views\\NguoiDung\\DangNhap.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T11:00:57.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DangKy.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\DangKy.cshtml",
+              "RelativeDocumentMoniker": "Views\\NguoiDung\\DangKy.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\NguoiDung\\DangKy.cshtml",
+              "RelativeToolTip": "Views\\NguoiDung\\DangKy.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T11:01:44.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "SanPhamController.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\SanPhamController.cs",
               "RelativeDocumentMoniker": "Controllers\\SanPhamController.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\SanPhamController.cs",
               "RelativeToolTip": "Controllers\\SanPhamController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwEMAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-12T07:51:09.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GioHangController.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\GioHangController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GioHangController.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\GioHangController.cs",
-              "RelativeToolTip": "Controllers\\GioHangController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAAAFsAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T12:21:10.375Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAkwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T07:23:27.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T14:18:09.413Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Ctdonhang.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Ctdonhang.cs",
-              "RelativeDocumentMoniker": "Models\\Ctdonhang.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Ctdonhang.cs",
-              "RelativeToolTip": "Models\\Ctdonhang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T11:31:31.615Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "Trangthaidonhang.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Trangthaidonhang.cs",
-              "RelativeDocumentMoniker": "Models\\Trangthaidonhang.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Trangthaidonhang.cs",
-              "RelativeToolTip": "Models\\Trangthaidonhang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T11:31:37.259Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Giohang.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Giohang.cs",
-              "RelativeDocumentMoniker": "Models\\Giohang.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Giohang.cs",
-              "RelativeToolTip": "Models\\Giohang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T07:19:01.183Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
               "Title": "QLDTContext.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\QLDTContext.cs",
               "RelativeDocumentMoniker": "Models\\QLDTContext.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\QLDTContext.cs",
               "RelativeToolTip": "Models\\QLDTContext.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAtwK0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgBAAAAAAAAAAAAwEABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-12T11:09:23.576Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Khachhang.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Khachhang.cs",
-              "RelativeDocumentMoniker": "Models\\Khachhang.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Khachhang.cs",
-              "RelativeToolTip": "Models\\Khachhang.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T07:36:32.356Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 18,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwCUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-11T15:12:53.168Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 21,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T03:13:51.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Ipad.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\Ipad.cshtml",
+              "RelativeDocumentMoniker": "Views\\Phone\\Ipad.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\Ipad.cshtml",
+              "RelativeToolTip": "Views\\Phone\\Ipad.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-14T14:46:37.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Phone\\Details.cshtml",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\Details.cshtml",
+              "RelativeToolTip": "Views\\Phone\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T15:09:06.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Dongsanpham.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Dongsanpham.cs",
+              "RelativeDocumentMoniker": "Models\\Dongsanpham.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Dongsanpham.cs",
+              "RelativeToolTip": "Models\\Dongsanpham.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T13:38:46.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Sanpham.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Sanpham.cs",
+              "RelativeDocumentMoniker": "Models\\Sanpham.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Sanpham.cs",
+              "RelativeToolTip": "Models\\Sanpham.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA7wB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T13:39:20.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Loaisp.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Loaisp.cs",
+              "RelativeDocumentMoniker": "Models\\Loaisp.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Loaisp.cs",
+              "RelativeToolTip": "Models\\Loaisp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T14:38:15.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Phone\\Index.cshtml",
@@ -459,19 +530,91 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "SanPham.cshtml",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\SanPham.cshtml",
-              "RelativeDocumentMoniker": "Views\\Phone\\SanPham.cshtml",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Phone\\SanPham.cshtml",
-              "RelativeToolTip": "Views\\Phone\\SanPham.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAcwBoAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T07:39:00.842Z"
+              "DocumentIndex": 26,
+              "Title": "Trangthaidonhang.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Trangthaidonhang.cs",
+              "RelativeDocumentMoniker": "Models\\Trangthaidonhang.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Trangthaidonhang.cs",
+              "RelativeToolTip": "Models\\Trangthaidonhang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T11:31:37.259Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
+              "Title": "OrderListViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\ViewModels\\OrderListViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\OrderListViewModel.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\ViewModels\\OrderListViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\OrderListViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T13:04:25.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "OrderDetailsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\ViewModels\\OrderDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\OrderDetailsViewModel.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\ViewModels\\OrderDetailsViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\OrderDetailsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T13:01:46.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T14:18:09.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Ctdonhang.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Ctdonhang.cs",
+              "RelativeDocumentMoniker": "Models\\Ctdonhang.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Ctdonhang.cs",
+              "RelativeToolTip": "Models\\Ctdonhang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T11:31:31.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Giohang.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Giohang.cs",
+              "RelativeDocumentMoniker": "Models\\Giohang.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Giohang.cs",
+              "RelativeToolTip": "Models\\Giohang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T07:19:01.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Khachhang.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Khachhang.cs",
+              "RelativeDocumentMoniker": "Models\\Khachhang.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Models\\Khachhang.cs",
+              "RelativeToolTip": "Models\\Khachhang.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T07:36:32.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
               "Title": "LienHe.cshtml",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\Home\\LienHe.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\LienHe.cshtml",
@@ -483,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 36,
               "Title": "Phone.css",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\css\\Phone.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\Phone.css",
@@ -495,7 +638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 37,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\SanPham\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\SanPham\\Index.cshtml",
@@ -507,7 +650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 38,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\Views\\SanPham\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\SanPham\\Edit.cshtml",
@@ -519,7 +662,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 39,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",

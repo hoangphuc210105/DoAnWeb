@@ -5,14 +5,74 @@
     ViewData["PageType"] = "auth"; // để layout biết không hiển thị banner home
 }
 
-<div class="container mt-5" style="max-width: 600px;">
-    <h2 class="text-center mb-4">@ViewData["Title"]</h2>
-
-    @* Thông báo đăng ký thành công *@
-    @if (TempData["SuccessMessage"] != null)
-    {
-        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+<style>
+    .login-logo img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #007bff;
+        padding: 5px;
+        background: #f8f9fa;
     }
+
+        .register-container {
+        max-width: 600px;
+
+        margin: 50px auto;
+        padding: 30px;
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .register-container h2 {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #444;
+    }
+
+    .btn-primary {
+        border-radius: 30px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+    }
+
+    .form-check-label {
+        font-weight: 500;
+        color: #555;
+    }
+
+    .text-center a {
+        font-weight: 600;
+        text-decoration: none;
+        color: #007bff;
+        transition: color 0.3s;
+    }
+
+    .text-center a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+</style>
+
+<div class="register-container">
+    <div class="text-center login-logo mb-3">
+        <img src="~/images/iconuser.jpg" alt="User Logo" />
+    </div>
+
+    <h2 class="text-center mb-4">@ViewData["Title"]</h2>
 
     <form asp-action="DangKy" method="post">
         <div class="mb-3">

@@ -145,8 +145,29 @@ namespace DoAnWeb.Controllers
             _context.Giohangs.RemoveRange(cartItems);
             _context.SaveChanges();
 
-            TempData["SuccessMessage"] = "Đặt hàng thành công!";
-            return RedirectToAction("Index", "Phone");
+
+            return RedirectToAction("OrderSuccess", new { orderId = donHang.Madonhang });
+        }
+        // Hiển thị thông báo đặt hàng thành công
+        public IActionResult OrderSuccess(int orderId)
+        {
+            int? maKH = HttpContext.Session.GetInt32("MAKH");
+            if (maKH == null) return RedirectToAction("DangNhap", "NguoiDung");
+
+            var donHang = _context.Donhangs
+                                  .Include(d => d.Ctdonhangs)
+                                  .ThenInclude(ct => ct.MaspNavigation)
+                                  .FirstOrDefault(d => d.Madonhang == orderId && d.Makh == maKH.Value);
+
+            if (donHang == null)
+            {
+                return RedirectToAction("Index", "Phone");
+            }
+
+            ViewData["Title"] = "Đặt hàng thành công";
+            ViewData["PageType"] = "Phone";
+
+            return View(donHang);
         }
 
     }

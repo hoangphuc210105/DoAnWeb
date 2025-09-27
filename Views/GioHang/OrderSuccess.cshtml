@@ -1,0 +1,40 @@
+﻿@model DoAnWeb.Models.Donhang
+
+@{
+    ViewData["Title"] = "Đặt hàng thành công";
+}
+
+<h2>🎉 Đặt hàng thành công!</h2>
+<p>Cảm ơn bạn đã mua hàng. Đơn hàng của bạn đã được ghi nhận với mã <strong>@Model.Madonhang</strong>.</p>
+
+<h4>Thông tin nhận hàng</h4>
+<ul>
+    <li>Người nhận: @Model.Tennguoinhan</li>
+    <li>Địa chỉ: @Model.Diachinhan</li>
+    <li>Điện thoại: @Model.Dienthoainhan</li>
+    <li>Ngày đặt: @Model.Ngaydat.ToString("dd/MM/yyyy HH:mm")</li>
+    <li>Tổng trị giá: @Model.TriGia.ToString("N0") VNĐ</li>
+</ul>
+
+<h4>Sản phẩm trong đơn hàng</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ct in Model.Ctdonhangs)
+        {
+            <tr>
+                <td>@ct.MaspNavigation?.Tensp</td>
+                <td>@ct.Soluongsp</td>
+                <td>@(ct.Gia.ToString("N0")) VNĐ</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Index", "Phone")" class="btn btn-primary">Tiếp tục mua sắm</a>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5Ga3VLT7CH9LD1SY3qXZhgWgylUoM0nqPbdZ5EN9Wxg=",
+  "Hash": "6G4Y5a9WIZE1t04MNyvgIBGom/E/huVPiY34UrLYeho=",
   "Source": "DoAnWeb",
   "BasePath": "_content/DoAnWeb",
   "Mode": "Default",
@@ -729,23 +729,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\giohang.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\hotdog.jpg",
-      "SourceId": "DoAnWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
-      "BasePath": "_content/DoAnWeb",
-      "RelativePath": "images/hotdog.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\hotdog.jpg"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\iconuser.jpg",
@@ -1613,23 +1596,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Tai nghe apple.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\tienmat.jpg",
-      "SourceId": "DoAnWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
-      "BasePath": "_content/DoAnWeb",
-      "RelativePath": "images/tienmat.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tienmat.jpg"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\images\\X.jpg",

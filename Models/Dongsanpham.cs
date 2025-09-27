@@ -12,7 +12,9 @@ namespace DoAnWeb.Models
 
         public int Madongsp { get; set; }
         public string Tendong { get; set; } = null!;
+        public int Maloai { get; set; }
 
+        public virtual Loaisp MaloaiNavigation { get; set; } = null!;
         public virtual ICollection<Sanpham> Sanphams { get; set; }
     }
 }

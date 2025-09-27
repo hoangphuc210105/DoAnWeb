@@ -2,7 +2,60 @@
     ViewData["Title"] = "Đăng nhập";
 }
 
-<div class="container mt-5" style="max-width: 500px;">
+<style>
+    .login-container {
+        max-width: 420px;
+        margin: 60px auto;
+        padding: 30px;
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .login-logo img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #007bff;
+        padding: 5px;
+        background: #f8f9fa;
+    }
+
+    h2 {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #555;
+    }
+
+    .btn-primary {
+        border-radius: 30px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+    }
+
+    .alert-danger {
+        border-radius: 10px;
+    }
+</style>
+
+<div class="login-container">
+    <!-- Logo user -->
+    <div class="text-center login-logo mb-3">
+        <img src="~/images/iconuser.jpg" alt="User Logo" />
+    </div>
+
     <h2 class="text-center mb-4">@ViewData["Title"]</h2>
 
     @* Hiển thị lỗi nếu có *@

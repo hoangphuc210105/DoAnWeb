@@ -21,6 +21,7 @@ namespace DoAnWeb.Models
         public virtual DbSet<Donhang> Donhangs { get; set; } = null!;
         public virtual DbSet<Giohang> Giohangs { get; set; } = null!;
         public virtual DbSet<Khachhang> Khachhangs { get; set; } = null!;
+        public virtual DbSet<Loaisp> Loaisps { get; set; } = null!;
         public virtual DbSet<Nguoiquantri> Nguoiquantris { get; set; } = null!;
         public virtual DbSet<Sanpham> Sanphams { get; set; } = null!;
         public virtual DbSet<Trangthaidonhang> Trangthaidonhangs { get; set; } = null!;
@@ -74,9 +75,17 @@ namespace DoAnWeb.Models
 
                 entity.Property(e => e.Madongsp).HasColumnName("MADONGSP");
 
+                entity.Property(e => e.Maloai).HasColumnName("MALOAI");
+
                 entity.Property(e => e.Tendong)
                     .HasMaxLength(100)
                     .HasColumnName("TENDONG");
+
+                entity.HasOne(d => d.MaloaiNavigation)
+                    .WithMany(p => p.Dongsanphams)
+                    .HasForeignKey(d => d.Maloai)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_DSP_LOAI");
             });
 
             modelBuilder.Entity<Donhang>(entity =>
@@ -132,7 +141,7 @@ namespace DoAnWeb.Models
             modelBuilder.Entity<Giohang>(entity =>
             {
                 entity.HasKey(e => e.Magiohang)
-                    .HasName("PK__GIOHANG__559F5534F1020980");
+                    .HasName("PK__GIOHANG__559F5534159C0A29");
 
                 entity.ToTable("GIOHANG");
 
@@ -165,11 +174,11 @@ namespace DoAnWeb.Models
             modelBuilder.Entity<Khachhang>(entity =>
             {
                 entity.HasKey(e => e.Makh)
-                    .HasName("PK__KHACHHAN__603F592C5954F231");
+                    .HasName("PK__KHACHHAN__603F592CD40BC3AB");
 
                 entity.ToTable("KHACHHANG");
 
-                entity.HasIndex(e => e.Email, "UQ__KHACHHAN__161CF724960AF985")
+                entity.HasIndex(e => e.Email, "UQ__KHACHHAN__161CF7246E95FA92")
                     .IsUnique();
 
                 entity.Property(e => e.Makh).HasColumnName("MAKH");
@@ -206,10 +215,26 @@ namespace DoAnWeb.Models
                     .HasColumnName("TENKH");
             });
 
+            modelBuilder.Entity<Loaisp>(entity =>
+            {
+                entity.HasKey(e => e.Maloai)
+                    .HasName("PK__LOAISP__2F633F2352967FF9");
+
+                entity.ToTable("LOAISP");
+
+                entity.Property(e => e.Maloai)
+                    .ValueGeneratedNever()
+                    .HasColumnName("MALOAI");
+
+                entity.Property(e => e.Tenloai)
+                    .HasMaxLength(50)
+                    .HasColumnName("TENLOAI");
+            });
+
             modelBuilder.Entity<Nguoiquantri>(entity =>
             {
                 entity.HasKey(e => e.UserAdmin)
-                    .HasName("PK__NGUOIQUA__AF86462B309F1576");
+                    .HasName("PK__NGUOIQUA__AF86462B496B2B53");
 
                 entity.ToTable("NGUOIQUANTRI");
 
@@ -274,11 +299,13 @@ namespace DoAnWeb.Models
             modelBuilder.Entity<Trangthaidonhang>(entity =>
             {
                 entity.HasKey(e => e.Matt)
-                    .HasName("PK__TRANGTHA__6023720FC32D0666");
+                    .HasName("PK__TRANGTHA__6023720F68E78FB0");
 
                 entity.ToTable("TRANGTHAIDONHANG");
 
-                entity.Property(e => e.Matt).HasColumnName("MATT");
+                entity.Property(e => e.Matt)
+                    .ValueGeneratedNever()
+                    .HasColumnName("MATT");
 
                 entity.Property(e => e.Tentt)
                     .HasMaxLength(50)

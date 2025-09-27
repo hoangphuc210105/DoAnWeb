@@ -15,7 +15,6 @@
         <h3 class="text-danger">@String.Format("{0:N0} đ", Model.Gia)</h3>
         <p><strong>Màu sắc:</strong> @Model.Color</p>
         <p><strong>Mô tả:</strong> @Model.Mota</p>
-        <p><strong>Ngày sản xuất:</strong> @Model.Ngaysanxuat?.ToString("dd/MM/yyyy")</p>
 
         <!-- Form thêm vào giỏ hàng -->
         <form asp-controller="Phone" asp-action="AddToCart" method="post">

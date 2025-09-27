@@ -39,13 +39,16 @@ namespace DoAnWeb.Controllers
         }
 
 
-        // Trang danh sách điện thoại (tách riêng)
+        // Trang danh sách iPhone (tách riêng)
         public async Task<IActionResult> SanPham(string? keyword)
         {
-            ViewData["Title"] = "Danh sách điện thoại";
+            ViewData["Title"] = "Danh sách iPhone";
             ViewData["PageType"] = "Phone";
 
             var products = from p in _context.Sanphams
+                           join dsp in _context.Dongsanphams on p.Madongsp equals dsp.Madongsp
+                           join loai in _context.Loaisps on dsp.Maloai equals loai.Maloai
+                           where loai.Tenloai == "iPhone"
                            select p;
 
             if (!string.IsNullOrEmpty(keyword))
@@ -56,6 +59,51 @@ namespace DoAnWeb.Controllers
 
             return View(await products.ToListAsync());
         }
+
+
+        // Trang danh sách iPad
+        public async Task<IActionResult> Ipad(string? keyword)
+        {
+            ViewData["Title"] = "Danh sách iPad";
+            ViewData["PageType"] = "Ipad";
+
+            var products = from p in _context.Sanphams
+                           join dsp in _context.Dongsanphams on p.Madongsp equals dsp.Madongsp
+                           join loai in _context.Loaisps on dsp.Maloai equals loai.Maloai
+                           where loai.Tenloai == "iPad"
+                           select p;
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                products = products.Where(p => p.Tensp.Contains(keyword));
+                ViewData["SearchKeyword"] = keyword;
+            }
+
+            return View(await products.ToListAsync());
+        }
+
+        // Trang danh sách Phụ kiện
+        public async Task<IActionResult> PhuKien(string? keyword)
+        {
+            ViewData["Title"] = "Danh sách Phụ kiện";
+            ViewData["PageType"] = "Accessory";
+
+            var products = from p in _context.Sanphams
+                           join dsp in _context.Dongsanphams on p.Madongsp equals dsp.Madongsp
+                           join loai in _context.Loaisps on dsp.Maloai equals loai.Maloai
+                           where loai.Tenloai == "Phụ kiện"
+                           select p;
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                products = products.Where(p => p.Tensp.Contains(keyword));
+                ViewData["SearchKeyword"] = keyword;
+            }
+
+            return View(await products.ToListAsync());
+        }
+
+
 
         // Hiển thị chi tiết sản phẩm theo ID
         public async Task<IActionResult> Details(int id)

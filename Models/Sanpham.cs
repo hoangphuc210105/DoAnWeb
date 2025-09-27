@@ -12,7 +12,7 @@ namespace DoAnWeb.Models
         }
 
         public int Masp { get; set; }
-        public int Madongsp { get; set; }   // 🔹 luôn required vì DB bắt buộc
+        public int Madongsp { get; set; }
         public string Tensp { get; set; } = null!;
         public int Soluong { get; set; }
         public string? Hinhanh { get; set; }
@@ -22,9 +22,7 @@ namespace DoAnWeb.Models
         public DateTime? Ngaysanxuat { get; set; }
         public string? Color { get; set; }
 
-        // 🔹 để nullable để EF không ép buộc khi Create()
-        public virtual Dongsanpham? MadongspNavigation { get; set; }
-
+        public virtual Dongsanpham MadongspNavigation { get; set; } = null!;
         public virtual ICollection<Ctdonhang> Ctdonhangs { get; set; }
         public virtual ICollection<Giohang> Giohangs { get; set; }
     }
