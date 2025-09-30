@@ -1,7 +1,12 @@
 ﻿using DoAnWeb.Models;
+using DoAnWeb.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Connect VNPay API
+builder.Services.AddScoped<IVnPayService, VnPayService>();
+
 
 // 1️⃣ Đăng ký DbContext
 builder.Services.AddDbContext<QLDTContext>(options =>

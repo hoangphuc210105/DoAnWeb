@@ -3,22 +3,36 @@
     Layout = "_Layout";
 }
 
-<h2 class="mb-4">@ViewData["Title"]</h2>
+<h2>@ViewData["Title"]</h2>
 
 <form asp-action="Checkout" method="post">
     <div class="mb-3">
-        <label class="form-label">Tên người nhận</label>
-        <input type="text" name="tenNguoiNhan" class="form-control" required />
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Địa chỉ nhận</label>
-        <input type="text" name="diaChiNhan" class="form-control" required />
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Điện thoại</label>
-        <input type="text" name="dienThoaiNhan" class="form-control" required />
+        <label for="tenNguoiNhan" class="form-label">Tên người nhận</label>
+        <input type="text" class="form-control" id="tenNguoiNhan" name="tenNguoiNhan" required />
     </div>
 
-    <button type="submit" class="btn btn-success">Xác nhận đặt hàng</button>
-    <a asp-action="Index" class="btn btn-secondary">Quay lại giỏ hàng</a>
+    <div class="mb-3">
+        <label for="diaChiNhan" class="form-label">Địa chỉ nhận</label>
+        <input type="text" class="form-control" id="diaChiNhan" name="diaChiNhan" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="dienThoaiNhan" class="form-label">Điện thoại</label>
+        <input type="text" class="form-control" id="dienThoaiNhan" name="dienThoaiNhan" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Chọn phương thức thanh toán:</label><br />
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="COD" checked />
+            <label class="form-check-label" for="cod">Thanh toán khi nhận hàng (COD)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="vnpay" value="VNPAY" />
+            <label class="form-check-label" for="vnpay">Thanh toán trực tuyến VnPay</label>
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Đặt hàng</button>
 </form>
