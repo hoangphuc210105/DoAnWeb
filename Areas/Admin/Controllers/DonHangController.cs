@@ -24,8 +24,9 @@ namespace DoAnWeb.Areas.Admin.Controllers
             ViewData["PageType"] = "donhang";
 
             var donHangs = await _context.Donhangs
-                                         .Include(d => d.MakhNavigation)
-                                         .Include(d => d.MattNavigation)
+                                         .Include(d => d.MakhNavigation) // khách hàng
+                                         .Include(d => d.MattNavigation) // trạng thái
+                                         .OrderByDescending(d => d.Ngaydat)
                                          .ToListAsync();
             return View(donHangs);
         }
@@ -50,6 +51,7 @@ namespace DoAnWeb.Areas.Admin.Controllers
             return View(donHang);
         }
 
+
         // GET: Admin/DonHang/UpdateStatus/5
         public async Task<IActionResult> UpdateStatus(int? id)
         {
@@ -61,7 +63,7 @@ namespace DoAnWeb.Areas.Admin.Controllers
 
             if (donHang == null) return NotFound();
 
-            // Lấy danh sách trạng thái để dropdown
+            // Lấy danh sách trạng thái cho dropdown (bao gồm “Đã hủy”)
             ViewData["TrangThaiList"] = new SelectList(_context.Trangthaidonhangs, "Matt", "Tentt", donHang.Matt);
 
             ViewData["Title"] = $"Cập nhật trạng thái đơn hàng #{donHang.Madonhang}";
@@ -69,6 +71,7 @@ namespace DoAnWeb.Areas.Admin.Controllers
 
             return View(donHang);
         }
+
 
         // POST: Admin/DonHang/UpdateStatus/5
         [HttpPost]
@@ -78,13 +81,10 @@ namespace DoAnWeb.Areas.Admin.Controllers
             var donHang = await _context.Donhangs.FindAsync(id);
             if (donHang == null) return NotFound();
 
-            // Cập nhật trạng thái đơn hàng theo dropdown
             donHang.Matt = Matt;
-
-            // Cập nhật trạng thái giao hàng
             donHang.Htgiaohang = Htgiaohang;
 
-            // Nếu tick "Đã giao", tự động chuyển trạng thái Matt sang 4
+            // Nếu tick "Đã giao", tự động chuyển trạng thái sang 4
             if (Htgiaohang)
             {
                 donHang.Matt = 4; // Đã giao
@@ -93,7 +93,6 @@ namespace DoAnWeb.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
 
 
         // POST: Admin/DonHang/Delete/5

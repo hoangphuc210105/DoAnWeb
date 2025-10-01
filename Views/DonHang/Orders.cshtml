@@ -1,8 +1,8 @@
-﻿@model IEnumerable<dynamic>
+﻿@model IEnumerable<DoAnWeb.Models.ViewModels.OrderListViewModel>
 
 @{
     ViewData["Title"] = "Đơn hàng của tôi";
-    ViewData["PageType"] = "auth";
+    ViewData["PageType"] = "order";
 }
 
 <div class="container mt-5">
@@ -21,7 +21,7 @@
                     <th>Ngày đặt</th>
                     <th>Trị giá</th>
                     <th>Trạng thái</th>
-                    <th>Chi tiết</th>
+                    <th>Hành động</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,7 +36,17 @@
                             <a asp-controller="DonHang" asp-action="Details" asp-route-id="@order.Madonhang" class="btn btn-sm btn-primary">
                                 Xem
                             </a>
+
+                            @* Hiển thị nút Hủy nếu trạng thái đơn là "Chờ xác nhận" *@
+                            @if (order.TrangThai == "Chờ xác nhận")
+                            {
+                                <form asp-controller="DonHang" asp-action="Cancel" asp-route-id="@order.Madonhang" method="post" style="display:inline;"
+                                      onsubmit="return confirm('Bạn có chắc muốn hủy đơn hàng này?');">
+                                    <button type="submit" class="btn btn-sm btn-danger">Hủy</button>
+                                </form>
+                            }
                         </td>
+
                     </tr>
                 }
             </tbody>

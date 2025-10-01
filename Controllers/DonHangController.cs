@@ -23,7 +23,7 @@ namespace DoAnWeb.Controllers
 
             var orders = _context.Donhangs
                 .Include(d => d.MattNavigation)
-                .Where(d => d.Makh == maKH.Value)
+                .Where(d => d.Makh == maKH.Value && d.MattNavigation.Tentt != "Đã hủy") // chỉ lấy đơn chưa hủy
                 .OrderByDescending(d => d.Ngaydat)
                 .Select(d => new OrderListViewModel
                 {
@@ -34,12 +34,42 @@ namespace DoAnWeb.Controllers
                 })
                 .ToList();
 
-            // 👉 Gán thông tin cho layout
             ViewData["Title"] = "Danh sách đơn hàng";
             ViewData["PageType"] = "order";
 
             return View(orders);
         }
+
+        // POST: /DonHang/Cancel/5
+        [HttpPost]
+        public IActionResult Cancel(int id)
+        {
+            int? maKH = HttpContext.Session.GetInt32("MAKH");
+            if (maKH == null)
+                return RedirectToAction("DangNhap", "NguoiDung");
+
+            var order = _context.Donhangs
+                .Include(d => d.MattNavigation)
+                .FirstOrDefault(d => d.Madonhang == id && d.Makh == maKH.Value);
+
+            if (order == null)
+                return NotFound();
+
+            if (order.MattNavigation.Tentt != "Chờ xác nhận")
+                return BadRequest("Đơn hàng không thể hủy.");
+
+            var canceledStatus = _context.Trangthaidonhangs.FirstOrDefault(t => t.Tentt == "Đã hủy");
+            if (canceledStatus == null)
+                return BadRequest("Không tìm thấy trạng thái 'Đã hủy'.");
+
+            order.Matt = canceledStatus.Matt;
+            _context.SaveChanges();
+
+            return RedirectToAction("Orders"); // Khi redirect, Orders() sẽ không load đơn đã hủy
+        }
+
+
+
 
         // GET: /DonHang/Details/5
         public IActionResult Details(int id)
