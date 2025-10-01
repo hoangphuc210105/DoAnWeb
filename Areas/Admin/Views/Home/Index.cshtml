@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Trang quản trị";
+    ViewData["PageType"] = "dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>Chào mừng đến trang quản trị. Chọn menu bên trái để quản lý.</p>
+
+<div class="card p-3 mt-3">
+    <h5>Thống kê đơn hàng theo tháng</h5>
+    <canvas id="donHangChart" width="400" height="200"></canvas>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Lấy dữ liệu từ ViewBag do Controller cung cấp
+        const labels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Labels ?? new string[] { "Tháng 1", "Tháng 2", "Tháng 3" }));
+        const data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Data ?? new int[] { 10, 20, 15 }));
+
+        const ctx = document.getElementById('donHangChart').getContext('2d');
+        const donHangChart = new Chart(ctx, {
+            type: 'bar', // loại biểu đồ
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Số lượng đơn hàng',
+                    data: data,
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}

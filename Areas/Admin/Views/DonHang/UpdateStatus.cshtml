@@ -1,0 +1,33 @@
+﻿@model DoAnWeb.Models.Donhang
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = $"Cập nhật trạng thái đơn hàng #{Model.Madonhang}";
+    ViewData["PageType"] = "donhang";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="UpdateStatus" method="post">
+    <input type="hidden" name="id" value="@Model.Madonhang" />
+
+    <!-- Dropdown trạng thái -->
+    <div class="mb-3">
+        <label for="Matt" class="form-label">Trạng thái</label>
+        @Html.DropDownListFor(model => model.Matt,
+                 (SelectList)ViewData["TrangThaiList"],
+                 "Chọn trạng thái",
+                 new { @class = "form-select", id = "Matt" })
+    </div>
+
+    <!-- Checkbox Đã giao hàng -->
+    <div class="form-check mb-3">
+        @* CheckBoxFor tự động tạo hidden field đi kèm *@
+        @Html.CheckBox("Htgiaohang", Model.Htgiaohang ?? false, new { @class = "form-check-input", id = "Htgiaohang" })
+        <label class="form-check-label" for="Htgiaohang">Đã giao hàng</label>
+    </div>
+
+    <button type="submit" class="btn btn-success">Cập nhật</button>
+    <a asp-action="Index" class="btn btn-secondary">⬅️ Quay lại</a>
+</form>

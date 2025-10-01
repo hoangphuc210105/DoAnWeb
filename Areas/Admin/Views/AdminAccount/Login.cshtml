@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "_LayoutLogin";
+    ViewData["Title"] = "Đăng nhập Admin";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<form asp-action="Login" method="post">
+    <div class="mb-3">
+        <label for="userAdmin" class="form-label">Tên đăng nhập</label>
+        <input type="text" class="form-control" id="userAdmin" name="userAdmin" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="passAdmin" class="form-label">Mật khẩu</label>
+        <input type="password" class="form-control" id="passAdmin" name="passAdmin" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+</form>

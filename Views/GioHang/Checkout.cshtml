@@ -1,38 +1,93 @@
-﻿@{
+﻿@model List<DoAnWeb.Models.Giohang>
+
+@{
     ViewData["Title"] = "Thanh toán";
     Layout = "_Layout";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<form asp-action="Checkout" method="post">
-    <div class="mb-3">
-        <label for="tenNguoiNhan" class="form-label">Tên người nhận</label>
-        <input type="text" class="form-control" id="tenNguoiNhan" name="tenNguoiNhan" required />
-    </div>
-
-    <div class="mb-3">
-        <label for="diaChiNhan" class="form-label">Địa chỉ nhận</label>
-        <input type="text" class="form-control" id="diaChiNhan" name="diaChiNhan" required />
-    </div>
-
-    <div class="mb-3">
-        <label for="dienThoaiNhan" class="form-label">Điện thoại</label>
-        <input type="text" class="form-control" id="dienThoaiNhan" name="dienThoaiNhan" required />
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Chọn phương thức thanh toán:</label><br />
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="COD" checked />
-            <label class="form-check-label" for="cod">Thanh toán khi nhận hàng (COD)</label>
+<div class="container my-4">
+    <div class="row">
+        <!-- Thông tin thanh toán -->
+        <div class="col-md-7">
+            <h4 class="mb-3 fw-bold text-uppercase">Thông tin thanh toán</h4>
+            <form asp-action="Checkout" method="post" class="p-3 border rounded bg-light shadow-sm">
+                <div class="mb-3">
+                    <label for="tenNguoiNhan" class="form-label">Tên người nhận <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="tenNguoiNhan" name="tenNguoiNhan" required />
+                </div>
+                <div class="mb-3">
+                    <label for="dienThoaiNhan" class="form-label">Điện thoại <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="dienThoaiNhan" name="dienThoaiNhan" required />
+                </div>
+                <div class="mb-3">
+                    <label for="diaChiNhan" class="form-label">Địa chỉ nhận <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="diaChiNhan" name="diaChiNhan" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Phương thức thanh toán</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" value="COD" checked />
+                        <label class="form-check-label">Thanh toán sau khi nhận hàng</label>
+                    </div>
+                    <div class="form-check d-flex align-items-center">
+                        <input class="form-check-input me-2" type="radio" name="paymentMethod" value="VNPAY" id="vnpay" />
+                        <label class="form-check-label d-flex align-items-center" for="vnpay">
+                            <img src="~/images/vnpay.jpg" alt="VNPAY" style="height:60px; margin-right:10px;" />       
+                            Thanh toán qua VnPay 
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary px-4">Đặt hàng</button>
+            </form>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="paymentMethod" id="vnpay" value="VNPAY" />
-            <label class="form-check-label" for="vnpay">Thanh toán trực tuyến VnPay</label>
+
+        <!-- Giỏ hàng -->
+        <div class="col-md-5">
+            <h4 class="mb-3 fw-bold text-uppercase">Đơn hàng của bạn</h4>
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Tổng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Any())
+                    {
+                        decimal total = 0;
+                        foreach (var item in Model)
+                        {
+                            var price = (item.MaspNavigation.Gia ?? 0);// -(item.MaspNavigation.Giamgia ?? 0);
+                            var subtotal = price * item.Soluong;
+                            total += subtotal;
+
+                            <tr>
+                                <td>@item.MaspNavigation.Tensp × @item.Soluong</td>
+                                <td>@price.ToString("N0") đ</td>
+                                <td>@item.Soluong</td>
+                                <td>@subtotal.ToString("N0") đ</td>
+                            </tr>
+                        }
+
+                        <tr class="fw-bold text-danger">
+                            <td colspan="3">Tổng cộng</td>
+                            <td>@total.ToString("N0") đ</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Giao hàng</td>
+                            <td class="text-success">Miễn phí</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center text-muted">Giỏ hàng trống</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
-
-
-    <button type="submit" class="btn btn-primary">Đặt hàng</button>
-</form>
+</div>

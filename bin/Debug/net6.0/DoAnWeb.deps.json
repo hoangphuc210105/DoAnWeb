@@ -9,6 +9,7 @@
       "DoAnWeb/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components.Web": "6.0.36",
+          "Microsoft.AspNetCore.Components.WebAssembly.Server": "6.0.36",
           "Microsoft.EntityFrameworkCore": "6.0.36",
           "Microsoft.EntityFrameworkCore.Design": "6.0.36",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.36",
@@ -634,6 +635,14 @@
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Components.Web.dll": {
             "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.3624.51604"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.36": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll": {
+            "assemblyVersion": "6.0.36.0",
             "fileVersion": "6.0.3624.51604"
           }
         }
@@ -2962,6 +2971,13 @@
       "sha512": "sha512-dLMvIZICjiZGIhnUTh4fT6k6w+JUBfuQWvlNIxZ2RJk/sFQ11pQMevUMnd1u+w7T1Ez4l3BQfRYobyrJFNIWzQ==",
       "path": "microsoft.aspnetcore.components.web/6.0.36",
       "hashPath": "microsoft.aspnetcore.components.web.6.0.36.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.WebAssembly.Server/6.0.36": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YBlN98DcIdUjIG1qPO9m+p7QDslsPn7A0JHkpUgqo8LV/lrnGfZBiscRqkVTzCySegpAGB2fCGh7g1gcMS/M5A==",
+      "path": "microsoft.aspnetcore.components.webassembly.server/6.0.36",
+      "hashPath": "microsoft.aspnetcore.components.webassembly.server.6.0.36.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Metadata/6.0.36": {
       "type": "package",

@@ -51,7 +51,11 @@
           "dependencies": {
             "Microsoft.AspNetCore.Components.Web": {
               "target": "Package",
-              "version": "[6.0.36, )"
+              "version": "[6.0.*, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[6.0.*, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DoAnWeb.Models.Donhang>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Danh sách đơn hàng";
+    ViewData["PageType"] = "donhang";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered table-striped table-hover align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã đơn</th>
+            <th>Khách hàng</th>
+            <th>Ngày đặt</th>
+            <th>Trạng thái</th>
+            <th>TT thanh toán</th>
+            <th>TT giao hàng</th>
+            <th>Tổng trị giá</th>
+            <th class="text-center">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dh in Model)
+        {
+            <tr>
+                <td>@dh.Madonhang</td>
+                <td>@dh.MakhNavigation?.Tenkh</td>
+                <td>@dh.Ngaydat.ToString("dd/MM/yyyy")</td>
+                <td>@dh.MattNavigation?.Tentt</td>
+                <td>@(dh.Htthanhtoan == true ? "Đã thanh toán" : "Chưa thanh toán")</td>
+                <td>@(dh.Htgiaohang == true ? "Đã giao" : "Chưa giao")</td>
+                <td>@dh.TriGia.ToString("N0") ₫</td>
+                <td class="text-center">
+                    <a asp-action="Details" asp-route-id="@dh.Madonhang" class="btn btn-sm btn-info">🔍 Xem</a>
+                    <a asp-action="UpdateStatus" asp-route-id="@dh.Madonhang" class="btn btn-sm btn-warning">⚙️ Cập nhật</a>
+                    <a asp-action="Delete" asp-route-id="@dh.Madonhang" class="btn btn-sm btn-danger">🗑 Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,75 @@
+﻿@model DoAnWeb.Models.Sanpham
+
+@{
+    ViewData["Title"] = "Chỉnh sửa sản phẩm";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Masp" />
+
+    <div class="form-group">
+        <label asp-for="Tensp"></label>
+        <input asp-for="Tensp" class="form-control" />
+    </div>
+
+    <!-- 🔹 Dropdown chọn dòng sản phẩm -->
+    <div class="form-group">
+        <label asp-for="Madongsp"></label>
+        <select asp-for="Madongsp" class="form-control" asp-items="ViewBag.Madongsp"></select>
+        <span asp-validation-for="Madongsp" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gia"></label>
+        <input asp-for="Gia" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Giamgia"></label>
+        <input asp-for="Giamgia" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Soluong"></label>
+        <input asp-for="Soluong" class="form-control" />
+    </div>
+
+    <!-- 🔹 Hiển thị ảnh cũ -->
+    <div class="form-group">
+        <label>Ảnh hiện tại</label><br />
+        @if (!string.IsNullOrEmpty(Model.Hinhanh))
+        {
+            <img src="~/images/@Model.Hinhanh" alt="Ảnh sản phẩm" width="150" />
+        }
+        else
+        {
+            <span>Chưa có ảnh</span>
+        }
+    </div>
+
+    <!-- 🔹 Chọn ảnh mới -->
+    <div class="form-group">
+        <label>Chọn ảnh mới (nếu muốn đổi)</label>
+        <input type="file" name="file" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Mota"></label>
+        <textarea asp-for="Mota" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Ngaysanxuat"></label>
+        <input asp-for="Ngaysanxuat" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Color"></label>
+        <input asp-for="Color" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

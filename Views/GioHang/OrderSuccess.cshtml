@@ -4,7 +4,7 @@
     ViewData["Title"] = "Đặt hàng thành công";
 }
 
-<h2>🎉 Đặt hàng thành công!</h2>
+@* <h2>🎉 Đặt hàng thành công!</h2>
 <p>Cảm ơn bạn đã mua hàng. Đơn hàng của bạn đã được ghi nhận với mã <strong>@Model.Madonhang</strong>.</p>
 
 <h4>Thông tin nhận hàng</h4>
@@ -37,4 +37,61 @@
     </tbody>
 </table>
 
-<a href="@Url.Action("Index", "Phone")" class="btn btn-primary">Tiếp tục mua sắm</a>
+<a href="@Url.Action("Index", "Phone")" class="btn btn-primary">Tiếp tục mua sắm</a> *@
+
+<div class="container my-4 px-4">
+    <div class="row">
+        <!-- Bảng sản phẩm bên trái -->
+        <div class="col-md-8">
+            <h2 class="fw-bold mb-4">Chi tiết đơn hàng</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th class="text-center">Số lượng</th>
+                        <th class="text-end">Tổng cộng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ct in Model.Ctdonhangs)
+                    {
+                        <tr>
+                            <td>@ct.MaspNavigation?.Tensp × @ct.Soluongsp</td>
+                            <td class="text-center">@ct.Soluongsp</td>
+                            <td class="text-end">
+                                @((ct.Gia * ct.Soluongsp).ToString("N0")) đ
+                            </td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan="2" class="text-end"><strong>Tổng cộng:</strong></td>
+                        <td class="text-end"><strong>@Model.TriGia.ToString("N0") đ</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-end"><strong>Giao nhận hàng:</strong></td>
+                        <td class="text-end">Giao hàng miễn phí</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-end"><strong>Tổng cộng:</strong></td>
+                        <td class="text-end"><strong>@Model.TriGia.ToString("N0") đ</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between mt-3">
+                <a href="@Url.Action("Index", "Phone")" class="btn btn-outline-primary">← Tiếp tục xem sản phẩm</a>
+            </div>
+        </div>
+
+        <!-- Box thông tin bên phải -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3">
+                <h5 class="text-success">Cảm ơn bạn. Đơn hàng của bạn đã được nhận.</h5>
+                <ul class="list-unstyled">
+                    <li><strong>Mã đơn hàng:</strong> @Model.Madonhang</li>
+                    <li><strong>Ngày:</strong> @Model.Ngaydat.ToString("d MMMM, yyyy")</li>
+                    <li><strong>Tổng cộng:</strong> @Model.TriGia.ToString("N0") đ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

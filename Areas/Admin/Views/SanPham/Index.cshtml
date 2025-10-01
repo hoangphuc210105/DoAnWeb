@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DoAnWeb.Models.Sanpham>
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Danh sách sản phẩm";
+    ViewData["PageType"] = "sanpham"; // để highlight menu Sản phẩm
+}
+
+
+<h2 class="mb-3">@ViewData["Title"]</h2>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">➕ Thêm sản phẩm</a>
+</p>
+
+<table class="table table-bordered table-striped table-hover align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã SP</th>
+            <th>Tên sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Giảm giá</th>
+            <th>Số lượng</th>
+            <th>Hình ảnh</th>
+            <th class="text-center">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sp in Model)
+        {
+            <tr>
+                <td>@sp.Masp</td>
+                <td>@sp.Tensp</td>
+                <td>@String.Format("{0:N0} ₫", sp.Gia)</td>
+                <td>
+                    @if (sp.Giamgia.HasValue)
+                    {
+                        @($"{sp.Giamgia.Value:N0} ₫")
+                    }
+                    else
+                    {
+                        <span>0 ₫</span>
+                    }
+                </td>
+                <td>@sp.Soluong</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(sp.Hinhanh))
+                    {
+                        <img src="~/images/@sp.Hinhanh" alt="Ảnh sản phẩm" width="100" class="img-thumbnail" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">Chưa có ảnh</span>
+                    }
+                </td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@sp.Masp" class="btn btn-sm btn-warning">✏️ Sửa</a>
+                    <a asp-action="Details" asp-route-id="@sp.Masp" class="btn btn-sm btn-info">🔍 Xem</a>
+                    <a asp-action="Delete" asp-route-id="@sp.Masp" class="btn btn-sm btn-danger">🗑 Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

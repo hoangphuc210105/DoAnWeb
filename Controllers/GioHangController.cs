@@ -53,29 +53,31 @@ namespace DoAnWeb.Controllers
 
         // Cập nhật số lượng
         [HttpPost]
-        public IActionResult UpdateQuantity(int id, int quantity)
-        {
-            int? maKH = HttpContext.Session.GetInt32("MAKH");
-            if (maKH == null) return RedirectToAction("DangNhap", "NguoiDung");
+		public IActionResult UpdateCart(List<int> id, List<int> quantity)
+		{
+			int? maKH = HttpContext.Session.GetInt32("MAKH");
+			if (maKH == null) return RedirectToAction("DangNhap", "NguoiDung");
 
-            var item = _context.Giohangs.FirstOrDefault(g => g.Masp == id && g.Makh == maKH.Value);
-            if (item != null && quantity > 0)
-            {
-                item.Soluong = quantity;
-                _context.SaveChanges();
+			for (int i = 0; i < id.Count; i++)
+			{
+				var item = _context.Giohangs.FirstOrDefault(g => g.Masp == id[i] && g.Makh == maKH.Value);
+				if (item != null && quantity[i] > 0)
+				{
+					item.Soluong = quantity[i];
+				}
+			}
 
-                // Sau khi SaveChanges trong Remove hoặc UpdateQuantity
-                var cartCount = _context.Giohangs
-                                        .Where(g => g.Makh == maKH.Value)
-                                        .Sum(g => g.Soluong);
-                HttpContext.Session.SetInt32("CART_COUNT", cartCount);
+			_context.SaveChanges();
 
-            }
+			// Cập nhật lại số lượng trong session
+			var cartCount = _context.Giohangs
+									.Where(g => g.Makh == maKH.Value)
+									.Sum(g => g.Soluong);
+			HttpContext.Session.SetInt32("CART_COUNT", cartCount);
+			return RedirectToAction("Index");
+		}
 
-            return RedirectToAction("Index");
-        }
 
-        
         // GET: Hiển thị form nhập thông tin thanh toán
         [HttpGet]
         public IActionResult Checkout()
@@ -86,11 +88,20 @@ namespace DoAnWeb.Controllers
                 return RedirectToAction("DangNhap", "NguoiDung");
             }
 
+            // Lấy giỏ hàng của khách
+            var cartItems = _context.Giohangs
+                                    .Include(g => g.MaspNavigation)
+                                    .Where(g => g.Makh == maKH.Value)
+                                    .ToList();
+
+            // Thêm ViewData cho view
             ViewData["Title"] = "Thanh toán";
             ViewData["PageType"] = "Phone";
 
-            return View();
+            // Truyền giỏ hàng sang view
+            return View(cartItems ?? new List<Giohang>());
         }
+
 
         // POST: Xử lý thanh toán
         [HttpPost]

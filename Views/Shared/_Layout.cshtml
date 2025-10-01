@@ -41,10 +41,17 @@
                     <!-- Search Form (nằm giữa) -->
                     <div class="col-6 d-flex justify-content-center">
                         <form class="d-flex w-75" asp-controller="Phone" asp-action="Search" method="get">
-                            <input class="form-control me-2" type="search" name="keyword" placeholder="Bạn cần tìm gì..." value="@ViewData["SearchKeyword"]">
-                            <button class="btn btn-outline-primary" type="submit">Tìm</button>
+                            <div class="input-group">
+                                <!-- Icon search bằng hình -->
+                                <span class="input-group-text" id="search-icon">
+                                    <img src="~/images/search-interface-symbol.png" alt="Search" style="width:20px; height:20px;">
+                                </span>
+                                <input class="form-control" type="search" name="keyword" placeholder="Bạn cần tìm gì..." value="@ViewData["SearchKeyword"]" aria-label="Search" aria-describedby="search-icon">
+                            </div>
                         </form>
                     </div>
+
+
 
 
                     <div class="col-3 d-flex justify-content-end align-items-center gap-3">
