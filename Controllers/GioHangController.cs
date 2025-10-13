@@ -83,30 +83,25 @@ namespace DoAnWeb.Controllers
         public IActionResult Checkout()
         {
             int? maKH = HttpContext.Session.GetInt32("MAKH");
-            if (maKH == null)
-            {
-                return RedirectToAction("DangNhap", "NguoiDung");
-            }
+            if (maKH == null) return RedirectToAction("DangNhap", "NguoiDung");
 
-            // Lấy giỏ hàng của khách
             var cartItems = _context.Giohangs
                                     .Include(g => g.MaspNavigation)
                                     .Where(g => g.Makh == maKH.Value)
                                     .ToList();
 
-            // Thêm ViewData cho view
+            ViewBag.CartItems = cartItems;
+
             ViewData["Title"] = "Thanh toán";
-            ViewData["PageType"] = "Phone";
+            ViewData["PageType"] = "thanhtoan"; // để Layout phân biệt có/không banner
 
-            // Truyền giỏ hàng sang view
-            return View(cartItems ?? new List<Giohang>());
+            return View(new CheckoutViewModel()); // form rỗng
         }
-
 
         // POST: Xử lý thanh toán
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Checkout(string tenNguoiNhan, string diaChiNhan, string dienThoaiNhan, string paymentMethod)
+        public IActionResult Checkout(CheckoutViewModel model)
         {
             int? maKH = HttpContext.Session.GetInt32("MAKH");
             if (maKH == null) return RedirectToAction("DangNhap", "NguoiDung");
@@ -115,6 +110,13 @@ namespace DoAnWeb.Controllers
                                     .Include(g => g.MaspNavigation)
                                     .Where(g => g.Makh == maKH.Value)
                                     .ToList();
+
+            if (!ModelState.IsValid)
+            {
+                // Load lại giỏ hàng để view không bị trống
+                ViewBag.CartItems = cartItems;
+                return View(model);
+            }
 
             if (!cartItems.Any())
             {
@@ -127,12 +129,12 @@ namespace DoAnWeb.Controllers
             {
                 Ngaydat = DateTime.Now,
                 Makh = maKH.Value,
-                Tennguoinhan = tenNguoiNhan,
-                Diachinhan = diaChiNhan,
-                Dienthoainhan = dienThoaiNhan,
-                Matt = 1, // Chờ xác nhận
+                Tennguoinhan = model.tenNguoiNhan,
+                Diachinhan = model.diaChiNhan,
+                Dienthoainhan = model.dienThoaiNhan,
+                Matt = 1,
                 Htgiaohang = false,
-                Htthanhtoan = paymentMethod == "VNPAY", // true nếu VnPay, false nếu COD
+                Htthanhtoan = model.paymentMethod == "VNPAY",
                 TriGia = cartItems.Sum(i => (i.MaspNavigation.Gia ?? 0) * i.Soluong)
             };
 
@@ -141,38 +143,36 @@ namespace DoAnWeb.Controllers
 
             foreach (var item in cartItems)
             {
-                var ct = new Ctdonhang
+                _context.Ctdonhangs.Add(new Ctdonhang
                 {
                     Madonhang = donHang.Madonhang,
                     Masp = item.Masp,
                     Gia = item.MaspNavigation.Gia ?? 0,
                     Soluongsp = item.Soluong
-                };
-                _context.Ctdonhangs.Add(ct);
+                });
             }
 
             _context.Giohangs.RemoveRange(cartItems);
             _context.SaveChanges();
 
-            if (paymentMethod == "VNPAY")
+            if (model.paymentMethod == "VNPAY")
             {
-                // Chuyển sang thanh toán VnPay
                 var paymentInfo = new DoAnWeb.Models.VnPay.PaymentInformationModel
                 {
-                    Name = tenNguoiNhan,
+                    Name = model.tenNguoiNhan,
                     OrderDescription = "Khách hàng Thanh toán giỏ hàng",
                     Amount = (double)donHang.TriGia,
                     OrderType = "billpayment"
                 };
 
-                // Giả sử bạn inject IVnPayService
                 var vnPayService = HttpContext.RequestServices.GetService(typeof(DoAnWeb.Services.IVnPayService)) as DoAnWeb.Services.IVnPayService;
                 var url = vnPayService.CreatePaymentUrl(paymentInfo, HttpContext);
-
                 return Redirect(url);
             }
 
             return RedirectToAction("OrderSuccess", new { orderId = donHang.Madonhang });
+
+
         }
 
         // Hiển thị thông báo đặt hàng thành công

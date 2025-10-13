@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EVf7i36Md5IB40iCCMrYSYJzAAQAfSlhzv5VZ7vXmgQ=",
+  "Hash": "DiMQDlCYNz5PjpcT2D+DeVVBx8xVCnuOMfxEbyGfCME=",
   "Source": "DoAnWeb",
   "BasePath": "_content/DoAnWeb",
   "Mode": "Default",
@@ -321,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\BaoHanh.css"
+    },
+    {
+      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\css\\DetailsPhone.css",
+      "SourceId": "DoAnWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
+      "BasePath": "_content/DoAnWeb",
+      "RelativePath": "css/DetailsPhone.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\DetailsPhone.css"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\css\\Footer.css",
@@ -1851,23 +1868,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\X.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\js\\site.js",
-      "SourceId": "DoAnWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\",
-      "BasePath": "_content/DoAnWeb",
-      "RelativePath": "js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
       "Identity": "C:\\Users\\LENOVO\\Desktop\\DoAnWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

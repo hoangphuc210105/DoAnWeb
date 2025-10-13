@@ -1,0 +1,231 @@
+﻿@* Views/Shared/_Footer.cshtml *@
+
+<style>
+    footer {
+        background-color: #f8f9fa;
+        padding: 40px 20px 20px;
+        margin-top: 50px;
+    }
+
+    .footer-main {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 250px 1fr 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 30px;
+    }
+
+    .footer-logo-section img {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .footer-company-info {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.8;
+    }
+
+    .footer-section h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #000;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+            .footer-section ul li a {
+                color: #666;
+                text-decoration: none;
+                font-size: 14px;
+                transition: color 0.3s;
+            }
+
+                .footer-section ul li a:hover {
+                    color: #000;
+                }
+
+    .footer-section p {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 8px;
+    }
+
+    .footer-contact-number {
+        color: #0066cc;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .footer-email {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+        .footer-email:hover {
+            text-decoration: underline;
+        }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-social-icons {
+        display: flex;
+        gap: 15px;
+    }
+
+        .footer-social-icons a {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+            .footer-social-icons a:hover {
+                background-color: #000;
+                color: #fff;
+                border-color: #000;
+            }
+
+    .footer-trademark {
+        color: #999;
+        font-size: 13px;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 15px;
+        font-size: 13px;
+    }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+        }
+
+            .footer-links a:hover {
+                color: #000;
+            }
+
+    @@media (max-width: 992px) {
+        .footer-main {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .footer-main {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+    }
+</style>
+
+<footer>
+    <div class="footer-main">
+        <div class="footer-logo-section">
+            <img src="~/images/logo.webp" alt="AI Apple Logo" />
+            <div class="footer-company-info">
+                <p><strong>Thương hiệu AI Apple Foundation</strong></p>
+                <p>CÔNG TY CỔ PHẦN SẢN XUẤT THƯƠNG MẠI TÂM MINH PHÁT</p>
+                <p>Địa chỉ: C7/30QR3, Ấp 41, Xã Bình Hưng, Huyện Bình Chánh, TP. Hồ Chí Minh</p>
+            </div>
+            <div style="margin-top: 15px;">
+                <p style="font-style: italic; font-size: 12px; color: #999;">Chính sách bảo mật</p>
+                <p style="font-style: italic; font-size: 12px; color: #999;">Các điều khoản và điều kiện</p>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Về chúng tôi</h3>
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="GioiThieu">Giới thiệu AI Apple</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="TuyenDung">Tuyển dụng</a></li>
+                <li><a asp-area="" asp-controller="Phone" asp-action="Index">Cam kết thương hiệu</a></li>
+                <li><a asp-area="" asp-controller="Phone" asp-action="Index">Danh sách cửa hàng</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="NhuongQuyen">Nhượng quyền thương hiệu</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="KhachHangThanThiet">Khách hàng thân thiết</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="ChinhSachGiaoHang">Chính sách giao hàng</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="ChinhSachBaoHanh">Chính sách bảo hành</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Hỗ trợ khách hàng</h3>
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="LienHe">Liên hệ đến AI Apple</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="FAQ">Câu hỏi thường gặp</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="HuongDanTaoTaiKhoan">Hướng dẫn tạo tài khoản</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="HuongDanDatHang">Hướng dẫn đặt hàng</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="MuaOnlineNhanTaiCuaHang">Mua Online nhận tại cửa hàng</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="HuongDanMuaTruocTraSau">Hướng dẫn mua trước trả sau</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="ChinhSachDoiTra">Quy định và hướng dẫn đổi/trả hàng</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="HuongDanDanhGia">Hướng dẫn đánh giá sản phẩm</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="HuongDanDoiThuong">Hướng dẫn xem và đổi thưởng</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Liên lạc</h3>
+            <p><strong>Đặt hàng trực tuyến (8h-21h)</strong></p>
+            <p class="footer-contact-number">1900 636942</p>
+            <p style="margin-top: 15px;"><strong>Chăm sóc khách hàng</strong></p>
+            <p class="footer-contact-number">1900 636940</p>
+            <p style="margin-top: 15px;">
+                <a href="mailto:support.apple@aiapple.vn" class="footer-email">support.apple@aiapple.vn</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-trademark">
+            <p>© AI Apple Foundation - 2024.</p>
+        </div>
+        <div class="footer-social-icons">
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noreferrer" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noreferrer" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+</footer>

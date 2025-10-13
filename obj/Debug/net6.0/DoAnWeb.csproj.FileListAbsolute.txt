@@ -1,6 +1,13 @@
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\appsettings.json
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\global.json
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\libman.json
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugHost.dll
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugHost.runtimeconfig.json
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugProxy.dll
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\Microsoft.CodeAnalysis.dll
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\Newtonsoft.Json.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\DoAnWeb.staticwebassets.runtime.json
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\DoAnWeb.exe
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\DoAnWeb.deps.json
@@ -14,6 +21,7 @@ C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Authorizat
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Components.WebAssembly.Server.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -86,6 +94,8 @@ C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\System.Security.Cryptography.Pk
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\System.Security.Permissions.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\af\Humanizer.resources.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\ar\Humanizer.resources.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\az\Humanizer.resources.dll
@@ -243,6 +253,7 @@ C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.GeneratedMSBuildEditorC
 C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.AssemblyInfoInputs.cache
 C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.AssemblyInfo.cs
 C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.RazorAssemblyInfo.cache
 C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.RazorAssemblyInfo.cs
@@ -257,11 +268,3 @@ C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\refint\DoAnWeb.dll
 C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.pdb
 C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\DoAnWeb.genruntimeconfig.cache
 C:\Users\LENOVO\Desktop\DoAnWeb\obj\Debug\net6.0\ref\DoAnWeb.dll
-C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\libman.json
-C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugHost.dll
-C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugHost.runtimeconfig.json
-C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\BrowserDebugProxy.dll
-C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\Microsoft.CodeAnalysis.dll
-C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\BlazorDebugProxy\Newtonsoft.Json.dll
-C:\Users\LENOVO\Desktop\DoAnWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Components.WebAssembly.Server.dll

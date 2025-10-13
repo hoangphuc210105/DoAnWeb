@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="~/css//Phone.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css//Footer.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DoAnWeb.styles.css" asp-append-version="true" />
+    @RenderSection("Styles", required: false)
+    @RenderSection("Scripts", required: false)
 
-    
 </head>
-<!-- Banner image -->
+
 
 <body>
     <div class="banner-top d-none d-md-block" style="background: #000000">
@@ -25,113 +26,7 @@
         </div>
     </div>
     <header>
-       
-        <!-- Logo -->
-        <nav class="navbar navbar-expand-sm navbar-light bg-white  sticky-top">
-            <div class="container-fluid d-flex flex-column">
-                <!-- Hàng 1: Logo + Search + Hotline + Giỏ hàng + Đăng nhập -->
-                <div class="row w-100 align-items-center">
-                    <!-- Logo -->
-                    <div class="col-3 d-flex align-items-center">
-                        <a class="navbar-brand" asp-area="" asp-controller="Phone" asp-action="Index">
-                            <img src="~/images/logo.webp" alt="Logo" style="height:50px;" />
-                        </a>
-                    </div>
-
-                    <!-- Search Form (nằm giữa) -->
-                    <div class="col-6 d-flex justify-content-center">
-                        <form class="d-flex w-75" asp-controller="Phone" asp-action="Search" method="get">
-                            <div class="input-group">
-                                <!-- Icon search bằng hình -->
-                                <span class="input-group-text" id="search-icon">
-                                    <img src="~/images/search-interface-symbol.png" alt="Search" style="width:20px; height:20px;">
-                                </span>
-                                <input class="form-control" type="search" name="keyword" placeholder="Bạn cần tìm gì..." value="@ViewData["SearchKeyword"]" aria-label="Search" aria-describedby="search-icon">
-                            </div>
-                        </form>
-                    </div>
-
-
-
-
-                    <div class="col-3 d-flex justify-content-end align-items-center gap-3">
-                        <!-- Giỏ hàng -->
-                        <a asp-area="" asp-controller="GioHang" asp-action="Index" class="btn btn-outline-success position-relative">
-                            🛒 Giỏ hàng
-                            @if (HttpContextAccessor.HttpContext.Session.GetInt32("MAKH") != null)
-                            {
-                                var maKH = HttpContextAccessor.HttpContext.Session.GetInt32("MAKH");
-                                // Giả sử bạn lưu DbContext trong ViewBag hoặc lấy qua service
-                                var db = HttpContextAccessor.HttpContext.RequestServices.GetService<DoAnWeb.Models.QLDTContext>();
-                                var count = db.Giohangs.Where(g => g.Makh == maKH).Sum(g => g.Soluong);
-
-                                if (count > 0)
-                                {
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                        @count
-                                    </span>
-                                }
-                            }
-                        </a>
-
-
-
-                        @if (HttpContextAccessor.HttpContext.Session.GetInt32("MAKH") != null)
-                        {
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                                    @HttpContextAccessor.HttpContext.Session.GetString("TENKH")
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
-                                    <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="NguoiDung" asp-action="Profile">Hồ sơ của tôi</a>
-                                    </li>
-                                    <li>
-                                      <a class="dropdown-item" asp-controller="DonHang" asp-action="Orders">Đơn hàng của tôi</a>
-                                    <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="NguoiDung" asp-action="Logout">Đăng xuất</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        }
-                        else
-                        {
-                            <a asp-area="" asp-controller="NguoiDung" asp-action="DangNhap" class="btn btn-primary">
-                                Đăng nhập
-                            </a>
-                        }
-                    </div>
-
-                </div>
-
-
-
-                <!-- Hàng 2: Menu (bên trái, dưới logo) -->
-                <div class="navbar-collapse collapse d-sm-inline-flex mt-2 w-100">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold text-danger" asp-area="" asp-controller="Phone" asp-action="Index">APPLE STORE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Phone" asp-action="SanPham">IPHONE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Phone" asp-action="Ipad">IPAD</a>
-                        </li>
-                          <li class="nav-item">
-                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Phone" asp-action="PhuKien">PHỤ KIỆN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Home" asp-action="BaoHanh">BẢO HÀNH VÀ HẬU MÃI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold text-black" asp-area="" asp-controller="Home" asp-action="LienHe">LIÊN HỆ</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+       @Html.Partial("Header")  
     </header>
     @{
         var pageType = ViewData["PageType"] as string ?? "home";
@@ -146,26 +41,18 @@
         </div>
     }
     @RenderBody()
+
+
+
     <footer>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-        <div class="div-footer">
-            <div class="footer-icons">
-                <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            <div class="footer-trademark">
-                <p>© AI Apple Foundation - 2024.</p>
-            </div>
-        </div>
+        @Html.Partial("Footer")
     </footer>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+
 </html>

@@ -1,59 +1,91 @@
 ﻿@model DoAnWeb.Models.Sanpham
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DoAnWeb</title>
 
-<form asp-action="Create" method="post" enctype="multipart/form-data">
-    <div asp-validation-summary="All" class="text-danger"></div>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <div class="form-group">
-        <label asp-for="Tensp"></label>
-        <input asp-for="Tensp" class="form-control" />
-        <span asp-validation-for="Tensp" class="text-danger"></span>
+    <!-- (Tuỳ chọn) FontAwesome để có icon đẹp -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Thêm sản phẩm mới</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Tensp" class="form-label fw-bold"> Tên Sản phẩm</label>
+                            <input asp-for="Tensp" class="form-control" placeholder="Nhập tên sản phẩm..." />
+                            <span asp-validation-for="Tensp" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Madongsp" class="form-label fw-bold">Mã Dòng SP</label>
+                            <select asp-for="Madongsp" class="form-select" asp-items="ViewBag.Madongsp"></select>
+                            <span asp-validation-for="Madongsp" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Soluong" class="form-label fw-bold">Số Lượng</label>
+                                <input asp-for="Soluong" class="form-control" />
+                                <span asp-validation-for="Soluong" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Gia" class="form-label fw-bold">Giá</label>
+                                <input asp-for="Gia" class="form-control" />
+                                <span asp-validation-for="Gia" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Giamgia" class="form-label fw-bold">Giảm giá</label>
+                            <input asp-for="Giamgia" class="form-control" />
+                            <span asp-validation-for="Giamgia" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Hình ảnh</label>
+                            <input type="file" name="file" class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Mota" class="form-label fw-bold"></label>
+                            <textarea asp-for="Mota" rows="3" class="form-control" placeholder="Nhập mô tả sản phẩm..."></textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Ngaysanxuat" class="form-label fw-bold">Ngày sản xuất</label>
+                                <input asp-for="Ngaysanxuat" type="date" class="form-control" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Color" class="form-label fw-bold"></label>
+                                <input asp-for="Color" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-4"> Lưu</button>
+                            <a asp-action="Index" class="btn btn-secondary px-4"> Quay lại</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+</body>
 
-    <div class="form-group">
-        <label asp-for="Madongsp"></label>
-        <select asp-for="Madongsp" class="form-control"
-                asp-items="ViewBag.Madongsp"></select>
-        <span asp-validation-for="Madongsp" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Soluong"></label>
-        <input asp-for="Soluong" class="form-control" />
-        <span asp-validation-for="Soluong" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Gia"></label>
-        <input asp-for="Gia" class="form-control" />
-        <span asp-validation-for="Gia" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Giamgia"></label>
-        <input asp-for="Giamgia" class="form-control" />
-        <span asp-validation-for="Giamgia" class="text-danger"></span>
-    </div>
-
-    <!-- 🔹 Chỗ chọn ảnh -->
-    <div class="form-group">
-        <label>Hình ảnh</label>
-        <input type="file" name="file" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Mota"></label>
-        <textarea asp-for="Mota" class="form-control"></textarea>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Ngaysanxuat"></label>
-        <input asp-for="Ngaysanxuat" type="date" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Color"></label>
-        <input asp-for="Color" class="form-control" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Lưu</button>
-</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

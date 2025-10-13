@@ -1,5 +1,5 @@
-﻿@model List<DoAnWeb.Models.Giohang>
-
+﻿@model DoAnWeb.Models.CheckoutViewModel
+@using DoAnWeb.Models
 @{
     ViewData["Title"] = "Thanh toán";
     Layout = "_Layout";
@@ -12,30 +12,34 @@
             <h4 class="mb-3 fw-bold text-uppercase">Thông tin thanh toán</h4>
             <form asp-action="Checkout" method="post" class="p-3 border rounded bg-light shadow-sm">
                 <div class="mb-3">
-                    <label for="tenNguoiNhan" class="form-label">Tên người nhận <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="tenNguoiNhan" name="tenNguoiNhan" required />
+                    <label asp-for="tenNguoiNhan" class="form-label">Tên người nhận</label>
+                    <input asp-for="tenNguoiNhan" class="form-control" />
+                    <span asp-validation-for="tenNguoiNhan" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label for="dienThoaiNhan" class="form-label">Điện thoại <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="dienThoaiNhan" name="dienThoaiNhan" required />
+                    <label asp-for="dienThoaiNhan" class="form-label">Số điện thoại</label>
+                    <input asp-for="dienThoaiNhan" class="form-control" />
+                    <span asp-validation-for="dienThoaiNhan" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label for="diaChiNhan" class="form-label">Địa chỉ nhận <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="diaChiNhan" name="diaChiNhan" required />
+                    <label asp-for="diaChiNhan" class="form-label">Địa chỉ nhận hàng</label>
+                    <input asp-for="diaChiNhan" class="form-control" />
+                    <span asp-validation-for="diaChiNhan" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">Phương thức thanh toán</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" value="COD" checked />
+                        <input class="form-check-input" type="radio" asp-for="paymentMethod" value="COD" checked />
                         <label class="form-check-label">Thanh toán sau khi nhận hàng</label>
                     </div>
                     <div class="form-check d-flex align-items-center">
-                        <input class="form-check-input me-2" type="radio" name="paymentMethod" value="VNPAY" id="vnpay" />
+                        <input class="form-check-input me-2" type="radio" asp-for="paymentMethod" value="VNPAY" id="vnpay" />
                         <label class="form-check-label d-flex align-items-center" for="vnpay">
-                            <img src="~/images/vnpay.jpg" alt="VNPAY" style="height:60px; margin-right:10px;" />       
-                            Thanh toán qua VnPay 
+                            <img src="~/images/vnpay.jpg" alt="VNPAY" style="height:60px; margin-right:10px;" />
+                            Thanh toán qua VnPay
                         </label>
                     </div>
+                    <span asp-validation-for="paymentMethod" class="text-danger"></span>
                 </div>
                 <button type="submit" class="btn btn-primary px-4">Đặt hàng</button>
             </form>
@@ -54,12 +58,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.Any())
+                    @if (ViewBag.CartItems != null && ((List<Giohang>)ViewBag.CartItems).Any())
                     {
                         decimal total = 0;
-                        foreach (var item in Model)
+                        foreach (var item in (List<Giohang>)ViewBag.CartItems)
                         {
-                            var price = (item.MaspNavigation.Gia ?? 0);// -(item.MaspNavigation.Giamgia ?? 0);
+                            var price = (item.MaspNavigation.Gia ?? 0);
                             var subtotal = price * item.Soluong;
                             total += subtotal;
 
@@ -91,3 +95,9 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

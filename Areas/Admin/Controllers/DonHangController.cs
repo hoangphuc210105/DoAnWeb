@@ -18,16 +18,37 @@ namespace DoAnWeb.Areas.Admin.Controllers
         }
 
         // GET: Admin/DonHang
-        public async Task<IActionResult> Index()
+        // GET: Admin/DonHang
+        public async Task<IActionResult> Index(int? status, DateTime? fromDate, DateTime? toDate)
         {
             ViewData["Title"] = "Danh sách đơn hàng";
             ViewData["PageType"] = "donhang";
 
-            var donHangs = await _context.Donhangs
-                                         .Include(d => d.MakhNavigation) // khách hàng
-                                         .Include(d => d.MattNavigation) // trạng thái
-                                         .OrderByDescending(d => d.Ngaydat)
-                                         .ToListAsync();
+            var query = _context.Donhangs
+                                .Include(d => d.MakhNavigation)
+                                .Include(d => d.MattNavigation)
+                                .AsQueryable();
+
+            if (status.HasValue && status.Value > 0)
+            {
+                query = query.Where(d => d.Matt == status.Value);
+            }
+
+            if (fromDate.HasValue)
+            {
+                query = query.Where(d => d.Ngaydat >= fromDate.Value);
+            }
+
+            if (toDate.HasValue)
+            {
+                query = query.Where(d => d.Ngaydat <= toDate.Value);
+            }
+
+            var donHangs = await query.OrderByDescending(d => d.Ngaydat).ToListAsync();
+
+            // Đẩy danh sách trạng thái ra ViewBag để render dropdown
+            ViewBag.TrangThaiList = new SelectList(_context.Trangthaidonhangs, "Matt", "Tentt");
+
             return View(donHangs);
         }
 

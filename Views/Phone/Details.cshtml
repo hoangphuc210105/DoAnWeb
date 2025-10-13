@@ -1,28 +1,395 @@
 ﻿@model DoAnWeb.Models.Sanpham
-
 @{
     ViewData["Title"] = "Chi tiết sản phẩm";
     Layout = "_Layout";
 }
 
-<h2>@Model.Tensp</h2>
+<script src="~/js/ asp-append-version="true"></script>
 
-<div class="row">
-    <div class="col-md-6">
-        <img src="~/images/@Model.Hinhanh" alt="@Model.Tensp" class="img-fluid" />
-    </div>
-    <div class="col-md-6">
-        <h3 class="text-danger">@String.Format("{0:N0} đ", Model.Gia)</h3>
-        <p><strong>Màu sắc:</strong> @Model.Color</p>
-        <p><strong>Mô tả:</strong> @Model.Mota</p>
+<link rel="stylesheet" href="~/css//DetailsPhone.css" asp-append-version="true" />
 
-        <!-- Form thêm vào giỏ hàng -->
-        <form asp-controller="Phone" asp-action="AddToCart" method="post">
-            <input type="hidden" name="id" value="@Model.Masp" />
-            <div class="input-group mb-3" style="width: 150px;"> 
-                <button type="submit" class="btn btn-success">Thêm vào giỏ</button>
+<div class="container mt-4">
+    <div class="row">
+        <!-- Cột trái: Hình ảnh sản phẩm -->
+        <div class="col-md-5">
+            <div class="text-center mb-3">
+                <img id="mainImage" src="~/images/@Model.Hinhanh" alt="@Model.Tensp" class="img-fluid" style="max-width: 100%; height: auto;" />
             </div>
-        </form>
-        <a asp-action="Index" class="btn btn-secondary mt-2">Quay lại danh sách</a>
+            <div class="d-flex justify-content-center gap-2">
+                <img src="~/images/ip16-hong.png" alt="@Model.Tensp Hình 1" class="img-thumbnail" style="max-width: 80px; height: auto; cursor: pointer;" onclick="changeMainImage('@Url.Content("~/images/ip16-hong.png")')" />
+                <img src="~/images/ip16-den.png" alt="@Model.Tensp Hình 2" class="img-thumbnail" style="max-width: 80px; height: auto; cursor: pointer;" onclick="changeMainImage('@Url.Content("~/images/ip16-den.png")')" />
+                <img src="~/images/ip 16-xanh.jpg" alt="@Model.Tensp Hình 3" class="img-thumbnail" style="max-width: 80px; height: auto; cursor: pointer;" onclick="changeMainImage('@Url.Content("~/images/ip 16-xanh.jpg")')" />
+                <img src="~/images/iphone-16-trang.jpg" alt="@Model.Tensp Hình 4" class="img-thumbnail" style="max-width: 80px; height: auto; cursor: pointer;" onclick="changeMainImage('@Url.Content("~/images/iphone-16-trang.jpg")')" />
+            </div>
+        </div>
+
+        <!-- Cột giữa: Thông tin sản phẩm -->
+        <div class="col-md-4">
+            <div class="mb-3">
+                <p class="mb-1"><strong>Loại:</strong> <span style="color: #e74c3c;">Đang cập nhật</span></p>
+                <p class="mb-1"><strong>Thương hiệu:</strong> <span style="color: #e74c3c;">Apple</span></p>
+                <p class="mb-1"><strong>Tình trạng:</strong> <span style="color: #e74c3c;">Còn hàng</span></p>
+                <p class="mb-1"><strong>Mã sản phẩm:</strong> <span style="color: #e74c3c;">Đang cập nhật</span></p>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1"><strong>Giá bán:</strong></p>
+                <h3 id="productPrice" class="text-danger mb-0" style="font-size: 2em;">@String.Format("{0:N0}", Model.Gia)₫</h3>
+            </div>
+
+            <div class="mb-3">
+                <!-- Phần màu sắc -->
+                <p class="mb-2"><strong>Màu sắc:</strong> <span id="selectedColor" style="color: #e74c3c;">@Model.Color</span></p>
+                <div class="d-flex flex-wrap gap-2">
+                    <button id="btnHồng" class="btn btn-outline-secondary color-btn d-flex align-items-center gap-2 px-3 py-2" style="border-color: #ddd;" onclick="changeColor('Hồng')">
+                        <div style="width: 30px; height: 30px; background-color: #ffb6c1; border: 1px solid #ddd; border-radius: 4px;"></div>
+                        <span>Hồng</span>
+                    </button>
+                    <button id="btnĐen" class="btn btn-outline-secondary color-btn d-flex align-items-center gap-2 px-3 py-2" style="border-color: #ddd;" onclick="changeColor('Đen')">
+                        <div style="width: 30px; height: 30px; background-color: #000000; border: 1px solid #ddd; border-radius: 4px;"></div>
+                        <span>Đen</span>
+                    </button>
+                    <button id="btnXanh" class="btn btn-outline-secondary color-btn d-flex align-items-center gap-2 px-3 py-2" style="border-color: #ddd;" onclick="changeColor('Xanh')">
+                        <div style="width: 30px; height: 30px; background-color: #87ceeb; border: 1px solid #ddd; border-radius: 4px;"></div>
+                        <span>Xanh</span>
+                    </button>
+                    <button id="btnTrắng" class="btn btn-outline-secondary color-btn d-flex align-items-center gap-2 px-3 py-2" style="border-color: #ddd;" onclick="changeColor('Trắng')">
+                        <div style="width: 30px; height: 30px; background-color: #ffffff; border: 1px solid #ddd; border-radius: 4px;"></div>
+                        <span>Trắng</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-2"><strong>Số lượng:</strong></p>
+                <div class="input-group" style="width: 150px;">
+                    <button class="btn btn-danger" type="button" onclick="decreaseQuantity()" style="background-color: #e74c3c; border-color: #e74c3c;">-</button>
+                    <input type="number" id="quantity" class="form-control text-center" value="1" min="1" style="max-width: 60px;" onchange="validateQuantity()">
+                    <button class="btn btn-danger" type="button" onclick="increaseQuantity()" style="background-color: #e74c3c; border-color: #e74c3c;">+</button>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <form asp-controller="Phone" asp-action="AddToCart" method="post">
+                    <input type="hidden" name="id" value="@Model.Masp" />
+                    <input type="hidden" name="color" id="colorInput" value="@Model.Color" />
+                    <input type="hidden" name="quantity" id="quantityInput" value="1" />
+
+                    <button type="submit" class="btn btn-warning w-100 mb-2 py-2"
+                            style="background-color: #ffc107; border-color: #ffc107; color: #000; font-weight: bold;">
+                        THÊM VÀO GIỎ
+                    </button>
+                </form>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-danger py-2" style="background-color: #e74c3c; border-color: #e74c3c; font-weight: bold; flex: 1;">MUA NGAY</button>
+                    <button class="btn btn-danger py-2" style="background-color: #e74c3c; border-color: #e74c3c; font-weight: bold; flex: 1;">
+                        Liên hệ 084 554 6789
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cột phải: Cam kết và khuyến mãi -->
+        <div class="col-md-3">
+            <div class="card mb-3" style="border: 2px solid #e74c3c;">
+                <div class="card-header text-white" style="background-color: #e74c3c;">
+                    <h5 class="mb-0"><i class="fas fa-bookmark"></i> Cam kết bán hàng</h5>
+                </div>
+                <div class="card-body" style="background-color: #fff5f5;">
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success"></i> SẢN PHẨM CHÍNH HÃNG</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success"></i> GIÁ ƯU ĐÃI TỐT</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success"></i> BÁN HÀNG CHUYÊN NGHIỆP</li>
+                        <li><i class="fas fa-check-circle text-success"></i> HẬU MÃI CHU ĐÁO</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="border: 2px solid #e74c3c;">
+                <div class="card-header text-white" style="background-color: #e74c3c;">
+                    <h5 class="mb-0"><i class="fas fa-bolt"></i> Danh sách khuyến mãi</h5>
+                </div>
+                <div class="card-body" style="background-color: #fff5f5;">
+                    <ul class="list-unstyled mb-2">
+                        <li class="mb-2"><i class="fas fa-check text-success"></i> Áp dụng Phiếu quà tặng/ Mã giảm giá theo sản phẩm.</li>
+                        <li class="mb-2"><i class="fas fa-check text-success"></i> Giảm giá 10% khi mua từ 5 sản phẩm trở lên.</li>
+                    </ul>
+                    <div class="alert alert-warning mb-0 p-2" style="font-size: 0.85em; background-color: #fff3cd; border-color: #ffc107;">
+                        <i class="fas fa-gift"></i> Mua sản phẩm này bạn sẽ được giao hàng miễn phí trong nội thành Hà Nội và nội thành HCM
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phần bình luận -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="comment-section">
+                <h4 class="mb-4"><i class="fas fa-comments"></i> Đánh giá & Bình luận sản phẩm</h4>
+
+                <!-- Form gửi bình luận -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Viết đánh giá của bạn</h5>
+                        <form id="commentForm">
+                            <div class="mb-3">
+                                <label class="form-label"><strong>Đánh giá của bạn:</strong></label>
+                                <div class="star-rating" id="starRating">
+                                    <i class="fas fa-star" data-rating="1"></i>
+                                    <i class="fas fa-star" data-rating="2"></i>
+                                    <i class="fas fa-star" data-rating="3"></i>
+                                    <i class="fas fa-star" data-rating="4"></i>
+                                    <i class="fas fa-star" data-rating="5"></i>
+                                </div>
+                                <input type="hidden" id="ratingValue" value="5">
+                            </div>
+                            <div class="mb-3">
+                                <label for="commentName" class="form-label"><strong>Tên của bạn:</strong></label>
+                                <input type="text" class="form-control" id="commentName" placeholder="Nhập tên của bạn" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="commentContent" class="form-label"><strong>Nội dung:</strong></label>
+                                <textarea class="form-control" id="commentContent" rows="4" placeholder="Chia sẻ trải nghiệm của bạn về sản phẩm..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger" style="background-color: #e74c3c; border-color: #e74c3c;">
+                                <i class="fas fa-paper-plane"></i> Gửi đánh giá
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Danh sách bình luận -->
+                <div id="commentsList">
+                    <h5 class="mb-3">Các đánh giá từ khách hàng</h5>
+
+                    <!-- Bình luận mẫu -->
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <div class="comment-avatar">N</div>
+                            <div class="comment-author">
+                                <div>Nguyễn Văn A</div>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="comment-date">3 ngày trước</div>
+                        </div>
+                        <div class="comment-content">
+                            Sản phẩm rất tuyệt vời, chất lượng tốt, đúng như mô tả. Shop giao hàng nhanh, đóng gói cẩn thận. Rất hài lòng với lần mua hàng này!
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <div class="comment-avatar">T</div>
+                            <div class="comment-author">
+                                <div>Trần Thị B</div>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="comment-date">1 tuần trước</div>
+                        </div>
+                        <div class="comment-content">
+                            Máy đẹp, màu sắc như hình. Tuy nhiên giá hơi cao một chút. Nhưng nhìn chung vẫn ok, sẽ ủng hộ shop lần sau.
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <div class="comment-avatar">L</div>
+                            <div class="comment-author">
+                                <div>Lê Minh C</div>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="comment-date">2 tuần trước</div>
+                        </div>
+                        <div class="comment-content">
+                            Máy chạy mượt mà, pin trâu, camera chụp đẹp. Rất đáng tiền! Shop tư vấn nhiệt tình, giao hàng đúng hẹn. Recommend!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
+<script>
+    // Bảng giá theo màu
+    const colorPrices = {
+        'Hồng': 13500000,
+        'Đen': 14500000,
+        'Xanh': 13000000,
+        'Trắng': 14000000
+    };
+
+    // Bảng hình ảnh theo màu
+    const colorImages = {
+        'Hồng': '@Url.Content("~/images/ip16-hong.png")',
+        'Đen': '@Url.Content("~/images/ip16-den.png")',
+        'Xanh': '@Url.Content("~/images/ip 16-xanh.jpg")',
+        'Trắng': '@Url.Content("~/images/iphone-16-trang.jpg")'
+    };
+
+    let currentColor = '@Model.Color';
+    let currentPrice = @Model.Gia;
+
+    // Hàm thay đổi màu
+    function changeColor(colorName) {
+        currentColor = colorName;
+        currentPrice = colorPrices[colorName];
+
+        document.getElementById('selectedColor').textContent = colorName;
+        document.getElementById('mainImage').src = colorImages[colorName];
+        document.getElementById('productPrice').textContent = currentPrice.toLocaleString('vi-VN') + '₫';
+        document.getElementById('colorInput').value = colorName; // cập nhật hidden input
+
+        // Active button
+        document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn' + colorName).classList.add('active');
+
+        console.log(`Đã chọn màu: ${colorName} - Giá: ${currentPrice.toLocaleString('vi-VN')}₫`);
+    }
+
+    // Khi load trang
+    window.onload = function () {
+        // Active màu hiện tại
+        if (currentColor && document.getElementById('btn' + currentColor)) {
+            document.getElementById('btn' + currentColor).classList.add('active');
+        }
+
+        // Các chức năng khác
+        initStarRating();
+        initCommentForm();
+    }
+
+    function changeMainImage(imagePath) {
+        document.getElementById('mainImage').src = imagePath;
+    }
+
+    // Các hàm tăng/giảm số lượng
+    function increaseQuantity() {
+        const quantityInput = document.getElementById('quantity');
+        const hiddenInput = document.getElementById('quantityInput');
+        let value = parseInt(quantityInput.value);
+        quantityInput.value = value + 1;
+        hiddenInput.value = quantityInput.value;
+    }
+
+    function decreaseQuantity() {
+        const quantityInput = document.getElementById('quantity');
+        const hiddenInput = document.getElementById('quantityInput');
+        let value = parseInt(quantityInput.value);
+        if (value > 1) {
+            quantityInput.value = value - 1;
+            hiddenInput.value = quantityInput.value;
+        }
+    }
+
+    function validateQuantity() {
+        const quantityInput = document.getElementById('quantity');
+        const hiddenInput = document.getElementById('quantityInput');
+        let value = parseInt(quantityInput.value);
+        if (isNaN(value) || value < 1) value = 1;
+        quantityInput.value = value;
+        hiddenInput.value = value;
+    }
+    // Khởi tạo đánh giá sao
+    function initStarRating() {
+        const stars = document.querySelectorAll('.star-rating i');
+        const ratingValue = document.getElementById('ratingValue');
+
+        stars.forEach((star, index) => {
+            star.addEventListener('click', function () {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                ratingValue.value = rating;
+
+                stars.forEach((s, i) => {
+                    if (i < rating) s.classList.add('active');
+                    else s.classList.remove('active');
+                });
+            });
+        });
+
+        // Mặc định 5 sao
+        stars.forEach(star => star.classList.add('active'));
+    }
+
+    // Khởi tạo form bình luận
+    function initCommentForm() {
+        const form = document.getElementById('commentForm');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('commentName').value.trim();
+            const content = document.getElementById('commentContent').value.trim();
+            const rating = parseInt(document.getElementById('ratingValue').value);
+
+            if (!name || !content) {
+                alert('Vui lòng điền đầy đủ tên và nội dung bình luận.');
+                return;
+            }
+
+            addComment(name, content, rating);
+            form.reset();
+
+            // Reset sao về 5
+            const stars = document.querySelectorAll('.star-rating i');
+            stars.forEach(star => star.classList.add('active'));
+            document.getElementById('ratingValue').value = 5;
+
+            alert('Cảm ơn bạn đã đánh giá sản phẩm!');
+        });
+    }
+
+    // Thêm bình luận mới
+    function addComment(name, content, rating) {
+        const commentsList = document.getElementById('commentsList');
+        const avatar = name.charAt(0).toUpperCase();
+
+        let starsHTML = '';
+        for (let i = 1; i <= 5; i++) {
+            starsHTML += i <= rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+        }
+
+        const newComment = document.createElement('div');
+        newComment.className = 'comment-item';
+        newComment.innerHTML = `
+            <div class="comment-header">
+                <div class="comment-avatar">${avatar}</div>
+                <div class="comment-author">
+                    <div>${name}</div>
+                    <div class="rating-stars">${starsHTML}</div>
+                </div>
+                <div class="comment-date">Vừa xong</div>
+            </div>
+            <div class="comment-content">${content}</div>
+        `;
+
+        const firstComment = commentsList.querySelector('.comment-item');
+        if (firstComment) {
+            commentsList.insertBefore(newComment, firstComment);
+        } else {
+            commentsList.appendChild(newComment);
+        }
+    }
+
+</script>

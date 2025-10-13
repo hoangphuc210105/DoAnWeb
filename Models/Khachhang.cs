@@ -20,6 +20,8 @@ namespace DoAnWeb.Models
         public string? Email { get; set; }
         public string? Matkhau { get; set; }
         public string? Sdt { get; set; }
+        public string? ThuHang { get; set; }  // Ví dụ: Bronze, Silver, Gold, Diamond
+
 
         public virtual ICollection<Donhang> Donhangs { get; set; }
         public virtual ICollection<Giohang> Giohangs { get; set; }

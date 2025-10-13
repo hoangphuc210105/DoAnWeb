@@ -1,0 +1,125 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@section Styles {
+    <link rel="stylesheet" href="custom.css" />
+}
+
+
+<!-- Logo -->
+<nav class="navbar navbar-expand-sm navbar-light bg-white  sticky-top">
+    <div class="container-fluid d-flex flex-column">
+        <!-- Hàng 1: Logo + Search + Hotline + Giỏ hàng + Đăng nhập -->
+        <div class="row w-100 align-items-center">
+            <!-- Logo -->
+            <div class="col-3 d-flex align-items-center">
+                <a class="navbar-brand" asp-area="" asp-controller="Phone" asp-action="Index">
+                    <img src="~/images/logo.webp" alt="Logo" style="height:50px;" />
+                </a>
+            </div>
+
+            <!-- Search Form (nằm giữa) -->
+            <div class="col-6 d-flex justify-content-center">
+                <form class="d-flex w-75" asp-controller="Phone" asp-action="Search" method="get">
+                    <div class="input-group">
+                        <!-- Icon search bằng hình -->
+                        <span class="input-group-text" id="search-icon">
+                            <img src="~/images/search-interface-symbol.png" alt="Search" style="width:20px; height:20px;">
+                        </span>
+                        <input class="form-control" type="search" name="keyword" placeholder="Bạn cần tìm gì..." value="@ViewData["SearchKeyword"]" aria-label="Search" aria-describedby="search-icon">
+                    </div>
+                </form>
+            </div>
+
+
+
+
+            <div class="col-3 d-flex justify-content-end align-items-center gap-3">
+                <!-- Giỏ hàng -->
+                <a asp-area="" asp-controller="GioHang" asp-action="Index" class="btn btn-outline-success position-relative">
+                    🛒 Giỏ hàng
+                    @if (HttpContextAccessor.HttpContext.Session.GetInt32("MAKH") != null)
+                    {
+                        var maKH = HttpContextAccessor.HttpContext.Session.GetInt32("MAKH");
+                        // Giả sử bạn lưu DbContext trong ViewBag hoặc lấy qua service
+                        var db = HttpContextAccessor.HttpContext.RequestServices.GetService<DoAnWeb.Models.QLDTContext>();
+                        var count = db.Giohangs.Where(g => g.Makh == maKH).Sum(g => g.Soluong);
+
+                        if (count > 0)
+                        {
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                @count
+                            </span>
+                        }
+                    }
+                </a>
+
+
+                @if (HttpContextAccessor.HttpContext.Session.GetInt32("MAKH") != null)
+                {
+                    var tenKH = HttpContextAccessor.HttpContext.Session.GetString("TENKH");
+                    var tenDangNhap = HttpContextAccessor.HttpContext.Session.GetString("Tendn");
+                    var thuHang = HttpContextAccessor.HttpContext.Session.GetString("THUHANG") ?? "Thành viên mới";
+
+                    <div class="dropdown">
+                        <!-- Nút bấm chỉ hiện Họ tên -->
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            @tenKH
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu" style="min-width: 250px;">
+                            <!-- Hiện thông tin người dùng -->
+                            <li class="dropdown-header text-center">
+                                <div class="fw-bold">@tenKH</div>   <!-- Họ và tên -->
+                                <div class="small text-muted">@tenDangNhap</div> <!-- Tên đăng nhập -->
+                                <div class="badge bg-warning text-dark mt-1">@thuHang</div> <!-- Thứ hạng -->
+                            </li>
+                            <li><hr class="dropdown-divider" /></li>
+
+                            <!-- Các chức năng -->
+                            <li>
+                                <a class="dropdown-item" asp-area="" asp-controller="NguoiDung" asp-action="Profile">Hồ sơ của tôi</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-controller="DonHang" asp-action="Orders">Đơn hàng của tôi</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-page="/Logout">Đăng xuất</a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <a asp-page="/DangNhap" class="btn btn-primary">
+                        Đăng nhập
+                    </a>
+                }
+
+            </div>
+
+            <!-- Hàng 2: Menu (bên trái, dưới logo) -->
+            <div class="navbar-collapse collapse d-sm-inline-flex mt-2 w-100">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-danger" asp-area="" asp-controller="Phone" asp-action="Index">APPLE STORE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Phone" asp-action="SanPham">IPHONE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Phone" asp-action="Ipad">IPAD</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Phone" asp-action="PhuKien">PHỤ KIỆN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-dark" asp-area="" asp-controller="Home" asp-action="BaoHanh">BẢO HÀNH VÀ HẬU MÃI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-black" asp-area="" asp-controller="Home" asp-action="LienHe">LIÊN HỆ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</nav>

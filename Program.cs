@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Connect VNPay API
+// 1️ Đăng ký dịch vụ VNPay
 builder.Services.AddScoped<IVnPayService, VnPayService>();
 
-// 1️ Đăng ký DbContext
+// 2️ Cấu hình DbContext (Kết nối SQL Server)
 builder.Services.AddDbContext<QLDTContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("QLDTConnection"))
 );
 
-// 2️ Đăng ký session + IHttpContextAccessor
+// 3️ Cấu hình Session và HttpContextAccessor
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
@@ -22,12 +22,13 @@ builder.Services.AddSession(options =>
 });
 builder.Services.AddHttpContextAccessor();
 
-// 3️ Add services MVC
+// 4️ Thêm hỗ trợ Razor Pages + Controllers
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages(); // ✅ Thêm dòng này để Razor Page hoạt động
 
 var app = builder.Build();
 
-// Configure middleware
+// 5️ Cấu hình middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -39,22 +40,25 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// 4️⃣ Bật Session trước Authorization
+// 6️ Kích hoạt Session
 app.UseSession();
 
-// Bật Authentication / Authorization (nếu có)
+// 7️ Bật xác thực & phân quyền (nếu có)
 app.UseAuthorization();
 
-// 5️⃣ Route cho Areas (Admin)
+// 8️ Map route cho Areas (Admin)
 app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
 );
 
-// 6️⃣ Route mặc định cho website
+// 9️ Route mặc định cho Controller
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Phone}/{action=Index}/{id?}"
 );
+
+// 10 Thêm cấu hình cho Razor Pages
+app.MapRazorPages();
 
 app.Run();

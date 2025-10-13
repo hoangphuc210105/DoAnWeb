@@ -8,6 +8,28 @@
 
 <h2>@ViewData["Title"]</h2>
 
+<!-- Bộ lọc -->
+<form method="get" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <label for="status" class="form-label">Trạng thái</label>
+        <select id="status" name="status" class="form-select">
+            <option value="">-- Tất cả --</option>
+            @foreach (var tt in ViewBag.TrangThaiList as SelectList)
+            {
+                <option value="@tt.Value" selected="@(ViewData["SelectedStatus"]?.ToString() == tt.Value ? "selected" : null)">
+                    @tt.Text
+                </option>
+            }
+        </select>
+    </div>
+
+    <div class="col-md-3 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary me-2">Lọc</button>
+        <a href="@Url.Action("Index", "DonHang", new { area = "Admin" })" class="btn btn-secondary">Reset</a>
+    </div>
+</form>
+
+<!-- Bảng danh sách -->
 <table class="table table-bordered table-striped table-hover align-middle">
     <thead class="table-dark">
         <tr>
@@ -35,7 +57,9 @@
                 <td class="text-center">
                     <a asp-action="Details" asp-route-id="@dh.Madonhang" class="btn btn-sm btn-info">🔍 Xem</a>
                     <a asp-action="UpdateStatus" asp-route-id="@dh.Madonhang" class="btn btn-sm btn-warning">⚙️ Cập nhật</a>
-                    <a asp-action="DeleteConfirmed" asp-route-id="@dh.Madonhang" class="btn btn-sm btn-danger">🗑 Xóa</a>
+                    <form asp-action="DeleteConfirmed" asp-route-id="@dh.Madonhang" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc muốn xóa đơn hàng này?');">🗑 Xóa</button>
+                    </form>
                 </td>
             </tr>
         }

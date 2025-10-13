@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using DoAnWeb.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DoAnWeb.Filters;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using X.PagedList;
 
 namespace DoAnWeb.Areas.Admin.Controllers
 {
@@ -18,14 +20,29 @@ namespace DoAnWeb.Areas.Admin.Controllers
         }
 
         // GET: SanPham
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
-            ViewData["PageType"] = "sanpham"; // Trang sản phẩm
-            var sanPham = await _context.Sanphams
+            int pageSize = 5; // số sản phẩm trên 1 trang
+            int pageNumber = page ?? 1; // nếu null thì mặc định là trang 1
+
+            var totalItems = await _context.Sanphams.CountAsync();
+
+            var sanPhams = await _context.Sanphams
                                         .Include(s => s.MadongspNavigation)
+                                        .OrderBy(s => s.Masp)
+                                        .Skip((pageNumber - 1) * pageSize)
+                                        .Take(pageSize)
                                         .ToListAsync();
-            return View(sanPham);
+
+            // Truyền dữ liệu phân trang qua ViewBag
+            ViewBag.PageNumber = pageNumber;
+            ViewBag.PageSize = pageSize;
+            ViewBag.TotalItems = totalItems;
+            ViewBag.TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            return View(sanPhams);
         }
+
 
         // GET: SanPham/Details/5
         public async Task<IActionResult> Details(int? id)

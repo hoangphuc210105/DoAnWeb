@@ -3,73 +3,104 @@
 @{
     ViewData["Title"] = "Chỉnh sửa sản phẩm";
 }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DoAnWeb</title>
 
-<h2>@ViewData["Title"]</h2>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<form asp-action="Edit" method="post" enctype="multipart/form-data">
-    <input type="hidden" asp-for="Masp" />
+    <!-- (Tuỳ chọn) FontAwesome để có icon đẹp -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-warning text-dark text-center fw-bold">
+                     @ViewData["Title"]
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="Masp" />
 
-    <div class="form-group">
-        <label asp-for="Tensp"></label>
-        <input asp-for="Tensp" class="form-control" />
+                        <div class="mb-3">
+                            <label asp-for="Tensp" class="form-label fw-bold">Tên Sản Phẩm</label>
+                            <input asp-for="Tensp" class="form-control" placeholder="Nhập tên sản phẩm..." />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Madongsp" class="form-label fw-bold"></label>
+                            <select asp-for="Madongsp" class="form-select" asp-items="ViewBag.Madongsp">Mã Dòng SP</select>
+                            <span asp-validation-for="Madongsp" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Gia" class="form-label fw-bold">Giá</label>
+                                <input asp-for="Gia" class="form-control" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Giamgia" class="form-label fw-bold">Giảm giá</label>
+                                <input asp-for="Giamgia" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Soluong" class="form-label fw-bold">Số lượng</label>
+                            <input asp-for="Soluong" class="form-control" />
+                        </div>
+
+                        <!-- Ảnh cũ -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Ảnh hiện tại</label><br />
+                            @if (!string.IsNullOrEmpty(Model.Hinhanh))
+                            {
+                                <img src="~/images/@Model.Hinhanh" alt="Ảnh sản phẩm" class="img-thumbnail" width="150" />
+                            }
+                            else
+                            {
+                                <span class="text-muted fst-italic">Chưa có ảnh</span>
+                            }
+                        </div>
+
+                        <!-- Chọn ảnh mới -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Chọn ảnh mới (nếu muốn đổi)</label>
+                            <input type="file" name="file" class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Mota" class="form-label fw-bold">Mô tả</label>
+                            <textarea asp-for="Mota" class="form-control" rows="3" placeholder="Mô tả sản phẩm..."></textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Ngaysanxuat" class="form-label fw-bold">Ngày sản xuất</label>
+                                <input asp-for="Ngaysanxuat" type="date" class="form-control" />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Color" class="form-label fw-bold"></label>
+                                <input asp-for="Color" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success px-4">
+                                 Cập nhật
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary px-4 ms-2">
+                                 Hủy
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- 🔹 Dropdown chọn dòng sản phẩm -->
-    <div class="form-group">
-        <label asp-for="Madongsp"></label>
-        <select asp-for="Madongsp" class="form-control" asp-items="ViewBag.Madongsp"></select>
-        <span asp-validation-for="Madongsp" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Gia"></label>
-        <input asp-for="Gia" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Giamgia"></label>
-        <input asp-for="Giamgia" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Soluong"></label>
-        <input asp-for="Soluong" class="form-control" />
-    </div>
-
-    <!-- 🔹 Hiển thị ảnh cũ -->
-    <div class="form-group">
-        <label>Ảnh hiện tại</label><br />
-        @if (!string.IsNullOrEmpty(Model.Hinhanh))
-        {
-            <img src="~/images/@Model.Hinhanh" alt="Ảnh sản phẩm" width="150" />
-        }
-        else
-        {
-            <span>Chưa có ảnh</span>
-        }
-    </div>
-
-    <!-- 🔹 Chọn ảnh mới -->
-    <div class="form-group">
-        <label>Chọn ảnh mới (nếu muốn đổi)</label>
-        <input type="file" name="file" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Mota"></label>
-        <textarea asp-for="Mota" class="form-control"></textarea>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Ngaysanxuat"></label>
-        <input asp-for="Ngaysanxuat" type="date" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Color"></label>
-        <input asp-for="Color" class="form-control" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Cập nhật</button>
-    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
-</form>
+</div>
+ </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,24 +1,60 @@
 ﻿@model DoAnWeb.Models.Sanpham
 
-@{
-    ViewData["Title"] = "Chi tiết sản phẩm";
-}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DoAnWeb</title>
 
-<h2>@ViewData["Title"]</h2>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<div>
-    <h3>@Model.Tensp</h3>
-    <p><strong>Giá:</strong> @Model.Gia..ToString("N0") VND</p>
-    <p><strong>Giảm giá:</strong> @(Model.Giamgia?.ToString("N0") ?? "0") VND</p>
-    <p><strong>Số lượng:</strong> @Model.Soluong</p>
-    <p><strong>Mô tả:</strong> @Model.Mota</p>
-    <p>
-        @if (!string.IsNullOrEmpty(Model.Hinhanh))
-        {
-            <img src="~/images/@Model.Hinhanh" alt="Ảnh sản phẩm" width="150" />
-        }
-    </p>
-</div>
+    <!-- (Tuỳ chọn) FontAwesome để có icon đẹp -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
 
-<a asp-action="Edit" asp-route-id="@Model.Masp" class="btn btn-warning">Sửa</a>
-<a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0 rounded-3">
+                    <div class="card-header bg-info text-white text-center">
+                        <h4>📖 Chi tiết sản phẩm</h4>
+                    </div>
+                    <div class="card-body p-4">
+
+                        <h3 class="text-primary">@Model.Tensp</h3>
+
+                        <p><strong> Giá:</strong> @Model.Gia?.ToString("N0") VND</p>
+                        <p><strong> Giảm giá:</strong> @(Model.Giamgia?.ToString("N0") ?? "0") VND</p>
+                        <p><strong> Số lượng:</strong> @Model.Soluong</p>
+                        <p><strong> Mô tả:</strong> @Model.Mota</p>
+
+                        <div class="mb-3">
+                            <strong> Hình ảnh:</strong><br />
+                            @if (!string.IsNullOrEmpty(Model.Hinhanh))
+                            {
+                                <img src="~/images/@Model.Hinhanh" alt="Ảnh sản phẩm" class="img-thumbnail mt-2" width="250" />
+                            }
+                            else
+                            {
+                                <span class="text-muted fst-italic">Chưa có ảnh</span>
+                            }
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a asp-action="Edit" asp-route-id="@Model.Masp" class="btn btn-warning px-4 me-2">
+                                 Sửa
+                            </a>
+                            <a asp-action="Index" class="btn btn-secondary px-4">
+                                 Quay lại
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
